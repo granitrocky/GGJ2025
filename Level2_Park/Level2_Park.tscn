@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://brd7538iq1qs4"]
+
+[ext_resource type="Texture2D" uid="uid://bdv2ju4lmujwi" path="res://Level2_Park/ParkPlanter.png" id="1_ab2u3"]
+[ext_resource type="Texture2D" uid="uid://ylhy11bm8j7w" path="res://Level1_Radio/ParkWall.png" id="2_bkgp8"]
+[ext_resource type="Texture2D" uid="uid://d01jgiiqwkspk" path="res://Level1_Radio/streetlight.png" id="3_nfbjp"]
+[ext_resource type="Texture2D" uid="uid://dhylb3nus55vs" path="res://Level1_Radio/parkBench.png" id="4_xq72r"]
+[ext_resource type="Texture2D" uid="uid://c6pbg2n0qvra0" path="res://Level2_Park/Arguers.png" id="5_341qg"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ParkPlanter" type="Sprite2D" parent="."]
+position = Vector2(355, 403)
+scale = Vector2(0.481445, 0.481445)
+texture = ExtResource("1_ab2u3")
+
+[node name="ParkWall2" type="Sprite2D" parent="."]
+position = Vector2(462, 651)
+texture = ExtResource("2_bkgp8")
+
+[node name="ParkWall2" type="Sprite2D" parent="ParkWall2"]
+position = Vector2(1743, 4)
+texture = ExtResource("2_bkgp8")
+
+[node name="Streetlight" type="Sprite2D" parent="ParkWall2"]
+position = Vector2(1467, -365)
+scale = Vector2(0.742188, 0.742188)
+texture = ExtResource("3_nfbjp")
+
+[node name="ParkWall3" type="Sprite2D" parent="."]
+position = Vector2(1335, 653)
+texture = ExtResource("2_bkgp8")
+
+[node name="Streetlight" type="Sprite2D" parent="."]
+position = Vector2(186, 282)
+scale = Vector2(0.742188, 0.742188)
+texture = ExtResource("3_nfbjp")
+
+[node name="ParkBench" type="Sprite2D" parent="."]
+position = Vector2(702, 301)
+scale = Vector2(0.72168, 0.72168)
+texture = ExtResource("4_xq72r")
+
+[node name="Arguers" type="Sprite2D" parent="."]
+position = Vector2(1495, 277)
+scale = Vector2(0.776367, 0.776367)
+texture = ExtResource("5_341qg")
