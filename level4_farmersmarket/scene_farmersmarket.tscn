@@ -72,16 +72,16 @@ autowrap_mode = 3
 uppercase = true
 metadata/_edit_use_anchors_ = true
 
-[node name="Fishy" type="Sprite2D" parent="."]
-position = Vector2(679, -5)
-rotation = -5.36863
+[node name="FarmersmarketNest" type="Sprite2D" parent="."]
+position = Vector2(982, 133)
+texture = ExtResource("6_kcg26")
+
+[node name="Fishy" type="Sprite2D" parent="FarmersmarketNest"]
+position = Vector2(-10, -54)
+rotation = 0.914553
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_ttaxy")
 
 [node name="FarmersmarketCornSign" type="Sprite2D" parent="."]
-position = Vector2(-140, 444)
+position = Vector2(25, 508)
 texture = ExtResource("5_6qrbd")
-
-[node name="FarmersmarketNest" type="Sprite2D" parent="."]
-position = Vector2(689, 49)
-texture = ExtResource("6_kcg26")
