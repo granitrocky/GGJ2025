@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://demo_scene/demo_scene_controller.gd" id="1_70c6a"]
 [ext_resource type="Script" path="res://addons/inkgd/ink_player.gd" id="2_sqd0i"]
-[ext_resource type="Resource" uid="uid://bs80g40suvj2k" path="res://demo_scene/demo_scene.ink.json" id="3_gdn5o"]
+[ext_resource type="JSON" uid="uid://bs80g40suvj2k" path="res://demo_scene/demo_scene.ink.json" id="3_gdn5o"]
 [ext_resource type="Script" path="res://interactable.gd" id="4_rdu1v"]
 [ext_resource type="Texture2D" uid="uid://duw3vcxd7tyvr" path="res://demo_scene/speech_bubble_L.png" id="5_l883p"]
 [ext_resource type="Texture2D" uid="uid://b3y12pi85ejgd" path="res://icon.svg" id="5_mactj"]
