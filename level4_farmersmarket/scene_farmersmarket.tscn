@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bag7b0mexeagg"]
+[gd_scene load_steps=8 format=3 uid="uid://bag7b0mexeagg"]
 
 [ext_resource type="Texture2D" uid="uid://b3y12pi85ejgd" path="res://icon.svg" id="1_56d70"]
 [ext_resource type="Script" path="res://addons/inkgd/ink_player.gd" id="1_yleu6"]
 [ext_resource type="Resource" uid="uid://dwx6qh03wbh7n" path="res://level4_farmersmarket/json_farmersmarket.json" id="2_cnbld"]
+[ext_resource type="Texture2D" uid="uid://dpqgjsvt2waku" path="res://level4_farmersmarket/Assets_farmersmarket/Fishy.png" id="4_ttaxy"]
+[ext_resource type="Texture2D" uid="uid://byhu7x1ov4xmn" path="res://level4_farmersmarket/Assets_farmersmarket/farmersmarket_CornSign.png" id="5_6qrbd"]
+[ext_resource type="Texture2D" uid="uid://db1tchp7mhbp2" path="res://level4_farmersmarket/Assets_farmersmarket/farmersmarket_Nest.png" id="6_kcg26"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_d8yp4"]
 font_size = 15
@@ -68,3 +71,17 @@ vertical_alignment = 1
 autowrap_mode = 3
 uppercase = true
 metadata/_edit_use_anchors_ = true
+
+[node name="Fishy" type="Sprite2D" parent="."]
+position = Vector2(679, -5)
+rotation = -5.36863
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_ttaxy")
+
+[node name="FarmersmarketCornSign" type="Sprite2D" parent="."]
+position = Vector2(-140, 444)
+texture = ExtResource("5_6qrbd")
+
+[node name="FarmersmarketNest" type="Sprite2D" parent="."]
+position = Vector2(689, 49)
+texture = ExtResource("6_kcg26")
