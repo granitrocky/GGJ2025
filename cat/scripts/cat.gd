@@ -8,8 +8,10 @@ const JUMP_BUFFER_TIME = 0.15
 
 var coyote_timer = COYOTE_TIME
 var jump_buffer_timer = 0
+var is_mewoing = false
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+
 
 
 func _physics_process(delta: float) -> void:
@@ -47,12 +49,19 @@ func _physics_process(delta: float) -> void:
 	if direction < 0:
 		animated_sprite.flip_h = true
 	
-	if is_on_floor():
-		if direction == 0:
-			animated_sprite.play("idle")
-		else:
-			animated_sprite.play("walk")
-	elif velocity.y < 0:
-		animated_sprite.play("jump")
+	if !is_mewoing:
+		if is_on_floor():
+			if direction == 0:
+				animated_sprite.play("idle")
+			else:
+				animated_sprite.play("walk")
+		elif velocity.y < 0:
+			animated_sprite.play("jump")
+	#else:
+		#animated_sprite.play("meow")
 	
 	move_and_slide()
+
+
+func _on_meow_bubble_is_meowing(meowing: Variant) -> void:
+	is_mewoing = meowing
