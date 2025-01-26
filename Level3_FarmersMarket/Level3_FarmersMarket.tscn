@@ -1,0 +1,133 @@
+[gd_scene load_steps=11 format=3 uid="uid://blbefx8x6kmhe"]
+
+[ext_resource type="Texture2D" uid="uid://ylhy11bm8j7w" path="res://Level1_Radio/ParkWall.png" id="1_p4hul"]
+[ext_resource type="Texture2D" uid="uid://c518tf8maobd5" path="res://Level3_FarmersMarket/farmersmarket_Structure.png" id="2_560xh"]
+[ext_resource type="Texture2D" uid="uid://c0sm1bv5y4ilt" path="res://Level3_FarmersMarket/farmersmarket_Nest.png" id="3_4oq38"]
+[ext_resource type="Texture2D" uid="uid://c6pbg2n0qvra0" path="res://Level2_Park/Arguers.png" id="4_56a47"]
+[ext_resource type="Texture2D" uid="uid://fjefihtj2uif" path="res://Level3_FarmersMarket/farmersmarket_Awning.png" id="5_foqaf"]
+[ext_resource type="Texture2D" uid="uid://daskyljo5vqvf" path="res://Level3_FarmersMarket/farmersmarket_Table.png" id="6_6tm0e"]
+[ext_resource type="Texture2D" uid="uid://c04hbuofg1vs" path="res://Level3_FarmersMarket/farmersmarket_Cabbage.png" id="7_6a3sp"]
+[ext_resource type="Texture2D" uid="uid://bjqy280a7qexx" path="res://Level3_FarmersMarket/farmersmarket_Corn.png" id="8_k0u3q"]
+[ext_resource type="Texture2D" uid="uid://d01jgiiqwkspk" path="res://Level1_Radio/streetlight.png" id="9_8ikgd"]
+[ext_resource type="Texture2D" uid="uid://u0bdkd0jw5j7" path="res://Level3_FarmersMarket/farmersmarket_CornSign.png" id="10_g067r"]
+
+[node name="Level3FarmersMarket" type="Node2D"]
+
+[node name="ParkWall2" type="Sprite2D" parent="."]
+position = Vector2(446, 627)
+texture = ExtResource("1_p4hul")
+
+[node name="ParkWall2" type="Sprite2D" parent="ParkWall2"]
+position = Vector2(868, -2)
+texture = ExtResource("1_p4hul")
+
+[node name="ParkWall3" type="Sprite2D" parent="ParkWall2"]
+position = Vector2(1743, -116)
+texture = ExtResource("1_p4hul")
+
+[node name="FarmersmarketStructure" type="Sprite2D" parent="ParkWall2"]
+position = Vector2(1745, -568)
+texture = ExtResource("2_560xh")
+
+[node name="FarmersmarketNest" type="Sprite2D" parent="ParkWall2"]
+position = Vector2(2171, -717)
+scale = Vector2(0.552632, 0.552632)
+texture = ExtResource("3_4oq38")
+
+[node name="Arguers" type="Sprite2D" parent="ParkWall2"]
+position = Vector2(1128, -274)
+scale = Vector2(0.550781, 0.550781)
+texture = ExtResource("4_56a47")
+
+[node name="FarmersmarketAwning" type="Sprite2D" parent="ParkWall2"]
+position = Vector2(505, -384)
+texture = ExtResource("5_foqaf")
+
+[node name="FarmersmarketTable" type="Sprite2D" parent="ParkWall2"]
+position = Vector2(1624, -192)
+texture = ExtResource("6_6tm0e")
+
+[node name="FarmersmarketCabbage" type="Sprite2D" parent="ParkWall2/FarmersmarketTable"]
+position = Vector2(-97, -73)
+scale = Vector2(0.575862, 0.575862)
+texture = ExtResource("7_6a3sp")
+
+[node name="FarmersmarketCabbage2" type="Sprite2D" parent="ParkWall2/FarmersmarketTable"]
+position = Vector2(-22, -71)
+scale = Vector2(0.575862, 0.575862)
+texture = ExtResource("7_6a3sp")
+
+[node name="FarmersmarketCabbage3" type="Sprite2D" parent="ParkWall2/FarmersmarketTable"]
+position = Vector2(61, -70)
+scale = Vector2(0.575862, 0.575862)
+texture = ExtResource("7_6a3sp")
+
+[node name="FarmersmarketCabbage4" type="Sprite2D" parent="ParkWall2/FarmersmarketTable"]
+position = Vector2(-65.0673, -123.25)
+scale = Vector2(0.575862, 0.575862)
+texture = ExtResource("7_6a3sp")
+
+[node name="FarmersmarketCabbage5" type="Sprite2D" parent="ParkWall2/FarmersmarketTable"]
+position = Vector2(17.9326, -122.25)
+scale = Vector2(0.575862, 0.575862)
+texture = ExtResource("7_6a3sp")
+
+[node name="FarmersmarketCabbage6" type="Sprite2D" parent="ParkWall2/FarmersmarketTable"]
+position = Vector2(-29.9999, -187)
+scale = Vector2(0.575862, 0.575862)
+texture = ExtResource("7_6a3sp")
+
+[node name="FarmersmarketTable2" type="Sprite2D" parent="ParkWall2"]
+position = Vector2(2053, -191)
+texture = ExtResource("6_6tm0e")
+
+[node name="FarmersmarketCabbage" type="Sprite2D" parent="ParkWall2/FarmersmarketTable2"]
+position = Vector2(-85, -90)
+rotation = 2.4552
+scale = Vector2(0.575862, 0.575862)
+texture = ExtResource("8_k0u3q")
+
+[node name="FarmersmarketCabbage2" type="Sprite2D" parent="ParkWall2/FarmersmarketTable2"]
+position = Vector2(-43, -87)
+rotation = 2.4552
+scale = Vector2(0.575862, 0.575862)
+texture = ExtResource("8_k0u3q")
+
+[node name="FarmersmarketCabbage3" type="Sprite2D" parent="ParkWall2/FarmersmarketTable2"]
+position = Vector2(75, -85)
+rotation = 2.41659
+scale = Vector2(0.575862, 0.575862)
+texture = ExtResource("8_k0u3q")
+
+[node name="FarmersmarketCabbage4" type="Sprite2D" parent="ParkWall2/FarmersmarketTable2"]
+position = Vector2(-15.0001, -111)
+rotation = 2.4552
+scale = Vector2(0.575862, 0.575862)
+texture = ExtResource("8_k0u3q")
+
+[node name="FarmersmarketCabbage5" type="Sprite2D" parent="ParkWall2/FarmersmarketTable2"]
+position = Vector2(12, -86)
+rotation = 2.4552
+scale = Vector2(0.575862, 0.575862)
+texture = ExtResource("8_k0u3q")
+
+[node name="FarmersmarketCabbage6" type="Sprite2D" parent="ParkWall2/FarmersmarketTable2"]
+position = Vector2(49.0001, -112)
+rotation = 2.4552
+scale = Vector2(0.575862, 0.575862)
+texture = ExtResource("8_k0u3q")
+
+[node name="Streetlight" type="Sprite2D" parent="."]
+position = Vector2(170, 258)
+scale = Vector2(0.742188, 0.742188)
+texture = ExtResource("9_8ikgd")
+
+[node name="FarmersmarketCornSign" type="Sprite2D" parent="."]
+position = Vector2(1807, 99)
+scale = Vector2(0.504292, 0.504292)
+texture = ExtResource("10_g067r")
+
+[node name="FarmersmarketCornSign2" type="Sprite2D" parent="."]
+position = Vector2(2323, 93)
+scale = Vector2(0.504292, 0.504292)
+texture = ExtResource("10_g067r")

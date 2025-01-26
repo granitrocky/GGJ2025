@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://ccfubjj1vitud"]
+
+[ext_resource type="Texture2D" uid="uid://b7f2l21c3warf" path="res://Level1_Radio/IceShantyHouse.png" id="1_pb2pd"]
+[ext_resource type="Texture2D" uid="uid://bm3cee3yd2a5t" path="res://Level1_Radio/HouseChair.png" id="2_gpg0q"]
+[ext_resource type="Texture2D" uid="uid://cptpntg7mif0i" path="res://Level1_Radio/Radio.png" id="3_offp1"]
+[ext_resource type="Texture2D" uid="uid://ylhy11bm8j7w" path="res://Level1_Radio/ParkWall.png" id="4_d3u27"]
+[ext_resource type="Texture2D" uid="uid://ckgnom1t8vu3t" path="res://Level1_Radio/BirdTheif.png" id="5_4gbmf"]
+[ext_resource type="Texture2D" uid="uid://d01jgiiqwkspk" path="res://Level1_Radio/streetlight.png" id="6_sud7f"]
+[ext_resource type="Texture2D" uid="uid://dhylb3nus55vs" path="res://Level1_Radio/parkBench.png" id="7_fporv"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="IceShantyHouse" type="Sprite2D" parent="."]
+position = Vector2(331, 324)
+scale = Vector2(0.610352, 0.610352)
+texture = ExtResource("1_pb2pd")
+
+[node name="HouseChair" type="Sprite2D" parent="."]
+position = Vector2(595, 255)
+scale = Vector2(0.666016, 0.666016)
+texture = ExtResource("2_gpg0q")
+
+[node name="Radio" type="Sprite2D" parent="."]
+position = Vector2(676, 391)
+scale = Vector2(0.441406, 0.441406)
+texture = ExtResource("3_offp1")
+
+[node name="ParkWall" type="Sprite2D" parent="."]
+position = Vector2(407, 594)
+texture = ExtResource("4_d3u27")
+
+[node name="ParkWall2" type="Sprite2D" parent="."]
+position = Vector2(1981, 601)
+texture = ExtResource("4_d3u27")
+
+[node name="BirdTheif" type="Sprite2D" parent="."]
+position = Vector2(755, 224)
+scale = Vector2(0.455078, 0.455078)
+texture = ExtResource("5_4gbmf")
+
+[node name="Streetlight" type="Sprite2D" parent="."]
+position = Vector2(1705, 232)
+scale = Vector2(0.742188, 0.742188)
+texture = ExtResource("6_sud7f")
+
+[node name="ParkBench" type="Sprite2D" parent="."]
+position = Vector2(2221, 251)
+scale = Vector2(0.72168, 0.72168)
+texture = ExtResource("7_fporv")
