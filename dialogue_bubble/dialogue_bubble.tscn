@@ -12,14 +12,11 @@ size = Vector2(522.664, 173.377)
 
 [node name="Dialogue_Bubble" type="Node2D"]
 script = ExtResource("1_7chuu")
-anchor_position = 1
-text = "This is a sample
-Dialogue Bubble"
-my_var = 0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-2, -12)
 scale = Vector2(0.0730843, 0.067436)
+collision_mask = 2
 
 [node name="NinePatchRect" type="NinePatchRect" parent="StaticBody2D"]
 offset_left = -217.353
