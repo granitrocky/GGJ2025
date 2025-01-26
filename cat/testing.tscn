@@ -141,7 +141,7 @@ tile_set = SubResource("TileSet_5mp8s")
 [node name="Cat" parent="." instance=ExtResource("1_ehex7")]
 
 [node name="Camera2D" type="Camera2D" parent="Cat"]
-zoom = Vector2(8, 8)
+zoom = Vector2(12, 12)
 limit_bottom = 70
 limit_smoothed = true
 position_smoothing_enabled = true
