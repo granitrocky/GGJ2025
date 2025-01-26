@@ -4,6 +4,7 @@ extends Node2D
 @onready var pop: Sprite2D = $Pop
 
 @onready var animated_sprite: AnimatedSprite2D = $"../AnimatedSprite2D"
+@onready var sfx_meow: AudioStreamPlayer2D = $"../sfx/sfxMeow"
 
 
 signal is_meowing(meowing)
@@ -22,6 +23,8 @@ func show_mew_bubble():
 	meowing = true
 	is_meowing.emit(true)
 	animated_sprite.play("me")
+	sfx_meow.play()
+	
 	await get_tree().create_timer(0.2).timeout
 	animated_sprite.play("ow")
 	meow.visible = true

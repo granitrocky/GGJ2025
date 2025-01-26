@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c2c2m746yukds"
+path="res://.godot/imported/Purr (Idle_).mp3-ea66a6c87a3679ad69eab7c864bf3043.mp3str"
+
+[deps]
+
+source_file="res://cat/assets/Purr (Idle_).mp3"
+dest_files=["res://.godot/imported/Purr (Idle_).mp3-ea66a6c87a3679ad69eab7c864bf3043.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
