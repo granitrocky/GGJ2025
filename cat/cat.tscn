@@ -156,6 +156,7 @@ radius = 4.0
 
 [node name="Cat" type="CharacterBody2D"]
 z_index = 10
+collision_layer = 2
 script = ExtResource("1_8lgvu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
