@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://ccfubjj1vitud"]
+[gd_scene load_steps=12 format=3 uid="uid://ccfubjj1vitud"]
 
 [ext_resource type="Texture2D" uid="uid://b7f2l21c3warf" path="res://Level1_Radio/IceShantyHouse.png" id="1_pb2pd"]
+[ext_resource type="Texture2D" uid="uid://c3lwoci4sllcs" path="res://Level1_Radio/BackgroundColor.png" id="1_qccl5"]
 [ext_resource type="Texture2D" uid="uid://bm3cee3yd2a5t" path="res://Level1_Radio/HouseChair.png" id="2_gpg0q"]
 [ext_resource type="Texture2D" uid="uid://cptpntg7mif0i" path="res://Level1_Radio/Radio.png" id="3_offp1"]
 [ext_resource type="Texture2D" uid="uid://ylhy11bm8j7w" path="res://Level1_Radio/ParkWall.png" id="4_d3u27"]
@@ -8,7 +9,49 @@
 [ext_resource type="Texture2D" uid="uid://d01jgiiqwkspk" path="res://Level1_Radio/streetlight.png" id="6_sud7f"]
 [ext_resource type="Texture2D" uid="uid://dhylb3nus55vs" path="res://Level1_Radio/parkBench.png" id="7_fporv"]
 
+[sub_resource type="Animation" id="Animation_dljyl"]
+resource_name = "FlyAway"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.166667, 0, 1.63333, 3.33333, 4.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(780, 214), Vector2(780, 214), Vector2(1266, 367), Vector2(2284, 192), Vector2(3579, 17)]
+}
+
+[sub_resource type="Animation" id="Animation_synq2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(780, 214)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xothn"]
+_data = {
+"FlyAway": SubResource("Animation_dljyl"),
+"RESET": SubResource("Animation_synq2")
+}
+
 [node name="Node2D" type="Node2D"]
+
+[node name="BackgroundColor" type="Sprite2D" parent="."]
+position = Vector2(2229, 527.5)
+scale = Vector2(98.0625, 61.0156)
+texture = ExtResource("1_qccl5")
 
 [node name="IceShantyHouse" type="Sprite2D" parent="."]
 position = Vector2(331, 324)
@@ -37,6 +80,11 @@ texture = ExtResource("4_d3u27")
 position = Vector2(780, 214)
 scale = Vector2(0.455078, 0.455078)
 texture = ExtResource("5_4gbmf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BirdTheif"]
+libraries = {
+"": SubResource("AnimationLibrary_xothn")
+}
 
 [node name="Streetlight" type="Sprite2D" parent="."]
 position = Vector2(1705, 232)

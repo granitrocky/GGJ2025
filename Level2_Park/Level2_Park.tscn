@@ -1,12 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://brd7538iq1qs4"]
+[gd_scene load_steps=7 format=3 uid="uid://brd7538iq1qs4"]
 
 [ext_resource type="Texture2D" uid="uid://bdv2ju4lmujwi" path="res://Level2_Park/ParkPlanter.png" id="1_ab2u3"]
+[ext_resource type="Texture2D" uid="uid://c3lwoci4sllcs" path="res://Level1_Radio/BackgroundColor.png" id="1_qbey4"]
 [ext_resource type="Texture2D" uid="uid://ylhy11bm8j7w" path="res://Level1_Radio/ParkWall.png" id="2_bkgp8"]
 [ext_resource type="Texture2D" uid="uid://d01jgiiqwkspk" path="res://Level1_Radio/streetlight.png" id="3_nfbjp"]
 [ext_resource type="Texture2D" uid="uid://dhylb3nus55vs" path="res://Level1_Radio/parkBench.png" id="4_xq72r"]
 [ext_resource type="Texture2D" uid="uid://c6pbg2n0qvra0" path="res://Level2_Park/Arguers.png" id="5_341qg"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="BackgroundColor" type="Sprite2D" parent="."]
+position = Vector2(1875, 689)
+scale = Vector2(74.875, 44.375)
+texture = ExtResource("1_qbey4")
 
 [node name="ParkPlanter" type="Sprite2D" parent="."]
 position = Vector2(355, 403)

@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://blbefx8x6kmhe"]
+[gd_scene load_steps=12 format=3 uid="uid://blbefx8x6kmhe"]
 
+[ext_resource type="Texture2D" uid="uid://c3lwoci4sllcs" path="res://Level1_Radio/BackgroundColor.png" id="1_e7yg7"]
 [ext_resource type="Texture2D" uid="uid://ylhy11bm8j7w" path="res://Level1_Radio/ParkWall.png" id="1_p4hul"]
 [ext_resource type="Texture2D" uid="uid://c518tf8maobd5" path="res://Level3_FarmersMarket/farmersmarket_Structure.png" id="2_560xh"]
 [ext_resource type="Texture2D" uid="uid://c0sm1bv5y4ilt" path="res://Level3_FarmersMarket/farmersmarket_Nest.png" id="3_4oq38"]
@@ -12,6 +13,11 @@
 [ext_resource type="Texture2D" uid="uid://u0bdkd0jw5j7" path="res://Level3_FarmersMarket/farmersmarket_CornSign.png" id="10_g067r"]
 
 [node name="Level3FarmersMarket" type="Node2D"]
+
+[node name="BackgroundColor" type="Sprite2D" parent="."]
+position = Vector2(2129, 104)
+scale = Vector2(93.875, 62.5)
+texture = ExtResource("1_e7yg7")
 
 [node name="ParkWall2" type="Sprite2D" parent="."]
 position = Vector2(446, 627)
