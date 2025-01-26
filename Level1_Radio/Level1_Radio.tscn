@@ -34,7 +34,7 @@ position = Vector2(1981, 601)
 texture = ExtResource("4_d3u27")
 
 [node name="BirdTheif" type="Sprite2D" parent="."]
-position = Vector2(755, 224)
+position = Vector2(780, 214)
 scale = Vector2(0.455078, 0.455078)
 texture = ExtResource("5_4gbmf")
 

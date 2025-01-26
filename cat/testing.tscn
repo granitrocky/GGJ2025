@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://uc6cr2bpejfa"]
+[gd_scene load_steps=6 format=4 uid="uid://uc6cr2bpejfa"]
 
 [ext_resource type="PackedScene" uid="uid://b8iwrtllwrxca" path="res://cat/cat.tscn" id="1_ehex7"]
 [ext_resource type="Texture2D" uid="uid://kcp1h5o658hn" path="res://cat/assets/world_tileset.png" id="2_nwm2m"]
+[ext_resource type="Texture2D" uid="uid://cptpntg7mif0i" path="res://Level1_Radio/Radio.png" id="3_f2mhu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8rvti"]
 texture = ExtResource("2_nwm2m")
@@ -145,3 +146,8 @@ zoom = Vector2(8, 8)
 limit_bottom = 70
 limit_smoothed = true
 position_smoothing_enabled = true
+
+[node name="Radio" type="Sprite2D" parent="."]
+position = Vector2(238, -44)
+scale = Vector2(0.150391, 0.150391)
+texture = ExtResource("3_f2mhu")
