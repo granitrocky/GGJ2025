@@ -1,0 +1,135 @@
+[gd_scene load_steps=8 format=3 uid="uid://c14p4i7ss5o2y"]
+
+[ext_resource type="Texture2D" uid="uid://djehtw1l37lj2" path="res://main_menu/assets/controls_LMB.png" id="1_uxgfn"]
+[ext_resource type="FontFile" uid="uid://dwbsopttqjj4c" path="res://fonts/Myfont-Regular.ttf" id="3_elct6"]
+[ext_resource type="Script" path="res://main_menu/button.gd" id="3_losi5"]
+
+[sub_resource type="Theme" id="Theme_amnvv"]
+
+[sub_resource type="Animation" id="Animation_snkbc"]
+resource_name = "new_animation"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.349066, 0.0, 0.349066]
+}
+
+[sub_resource type="Animation" id="Animation_ag5xk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.349066]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i2akp"]
+_data = {
+"RESET": SubResource("Animation_ag5xk"),
+"new_animation": SubResource("Animation_snkbc")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button2" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.0
+offset_top = -104.0
+offset_right = 48.0
+offset_bottom = 152.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.349066
+pivot_offset = Vector2(128, 128)
+theme = SubResource("Theme_amnvv")
+texture_normal = ExtResource("1_uxgfn")
+script = ExtResource("3_losi5")
+
+[node name="Label" type="Label" parent="Button2"]
+texture_filter = 2
+layout_mode = 0
+offset_left = 236.498
+offset_top = 98.9967
+offset_right = 341.498
+offset_bottom = 194.997
+theme_override_fonts/font = ExtResource("3_elct6")
+theme_override_font_sizes/font_size = 58
+text = "Lydia"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Button2"]
+root_node = NodePath("../../Button2")
+libraries = {
+"": SubResource("AnimationLibrary_i2akp")
+}
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 487.0
+offset_top = 168.0
+offset_right = 527.0
+offset_bottom = 208.0
+rotation = 2.72795
+
+[node name="Button" type="TextureButton" parent="Control"]
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.563
+offset_top = -127.778
+offset_right = 127.437
+offset_bottom = 128.222
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.349066
+pivot_offset = Vector2(128, 128)
+theme = SubResource("Theme_amnvv")
+texture_normal = ExtResource("1_uxgfn")
+script = ExtResource("3_losi5")
+
+[node name="Label" type="Label" parent="Control/Button"]
+layout_mode = 0
+offset_left = 76.158
+offset_top = 68.6923
+offset_right = 116.158
+offset_bottom = 91.6923
+theme_override_fonts/font = ExtResource("3_elct6")
+text = "Hello"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/Button"]
+libraries = {
+"": SubResource("AnimationLibrary_i2akp")
+}
+
+[connection signal="mouse_entered" from="Button2" to="Button2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Button2" to="Button2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Control/Button" to="Control/Button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Control/Button" to="Control/Button" method="_on_mouse_exited"]
