@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c14p4i7ss5o2y"]
+[gd_scene load_steps=21 format=3 uid="uid://c14p4i7ss5o2y"]
 
 [ext_resource type="Texture2D" uid="uid://co4iy51og15hq" path="res://main_menu/assets/Fishy.png" id="1_4by7k"]
 [ext_resource type="Texture2D" uid="uid://cv4ohkajxlc0p" path="res://main_menu/assets/Toy2.png" id="1_fyd5n"]
@@ -6,10 +6,16 @@
 [ext_resource type="FontFile" uid="uid://dwbsopttqjj4c" path="res://fonts/Myfont-Regular.ttf" id="3_elct6"]
 [ext_resource type="Script" path="res://main_menu/button.gd" id="3_losi5"]
 [ext_resource type="Texture2D" uid="uid://bcrklh1d0qip3" path="res://main_menu/assets/Toy5.png" id="4_gqs5q"]
+[ext_resource type="AudioStream" uid="uid://d26rfnls5fubp" path="res://main_menu/assets/Squeaky Toy.mp3" id="5_20sex"]
+[ext_resource type="AudioStream" uid="uid://byoq6msxrmf70" path="res://main_menu/assets/Laser Pointer_.mp3" id="6_ny1vv"]
 [ext_resource type="Texture2D" uid="uid://cb6aevygorihr" path="res://main_menu/assets/Toy4.png" id="6_oi7ts"]
 [ext_resource type="Texture2D" uid="uid://cg4obdsdaq3li" path="res://main_menu/assets/Toy3.png" id="8_c8fw3"]
 [ext_resource type="Texture2D" uid="uid://dbumon6co1awx" path="res://main_menu/assets/Toy1.png" id="9_kx3vf"]
 [ext_resource type="Texture2D" uid="uid://nv5d68dpxd4y" path="res://main_menu/assets/Contoller.png" id="10_03t50"]
+[ext_resource type="AudioStream" uid="uid://d1p4w37xrp1xh" path="res://main_menu/assets/Boinggg.mp3" id="10_x7dhp"]
+[ext_resource type="AudioStream" uid="uid://rx824cyl51oy" path="res://main_menu/assets/Clink.mp3" id="12_6c5jm"]
+[ext_resource type="AudioStream" uid="uid://cv4m32w1xkqcc" path="res://main_menu/assets/Funny Noise.mp3" id="14_naagq"]
+[ext_resource type="AudioStream" uid="uid://cso81mdmqq81q" path="res://main_menu/assets/Horn.mp3" id="16_6t1vv"]
 
 [sub_resource type="Theme" id="Theme_amnvv"]
 
@@ -149,6 +155,9 @@ libraries = {
 "": SubResource("AnimationLibrary_i2akp")
 }
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Play/Button"]
+stream = ExtResource("5_20sex")
+
 [node name="Fayad" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -183,6 +192,12 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_elct6")
 theme_override_font_sizes/font_size = 72
 text = "Fayad"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Fayad/Button"]
+position = Vector2(277.638, 268.279)
+rotation = 0.0872665
+scale = Vector2(1, 1)
+stream = ExtResource("6_ny1vv")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Fayad/Button"]
 libraries = {
@@ -235,6 +250,9 @@ libraries = {
 "": SubResource("AnimationLibrary_i2akp")
 }
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Lydia/Button"]
+stream = ExtResource("5_20sex")
+
 [node name="Zach" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -274,6 +292,9 @@ text = "Zach"
 libraries = {
 "": SubResource("AnimationLibrary_i2akp")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Zach/Button"]
+stream = ExtResource("10_x7dhp")
 
 [node name="Jonny" type="Control" parent="."]
 layout_mode = 3
@@ -315,6 +336,9 @@ libraries = {
 "": SubResource("AnimationLibrary_i2akp")
 }
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Jonny/Button"]
+stream = ExtResource("12_6c5jm")
+
 [node name="Edison" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -349,12 +373,15 @@ rotation = 1.14891
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_elct6")
 theme_override_font_sizes/font_size = 72
-text = "Jonny"
+text = "Edison?"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Edison/Button"]
 libraries = {
 "": SubResource("AnimationLibrary_i2akp")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Edison/Button"]
+stream = ExtResource("14_naagq")
 
 [node name="Controls" type="Control" parent="."]
 layout_mode = 3
@@ -397,6 +424,12 @@ text = "Controls"
 libraries = {
 "": SubResource("AnimationLibrary_i2akp")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Controls/Button"]
+stream = ExtResource("16_6t1vv")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+autoplay = true
 
 [connection signal="mouse_entered" from="Play/Button" to="Play/Button" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Play/Button" to="Play/Button" method="_on_mouse_exited"]
