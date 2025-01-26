@@ -11,13 +11,21 @@ config_version=5
 [application]
 
 config/name="Alice Danger's Meowlogue Mittens"
-run/main_scene="res://cat/testing.tscn"
+run/main_scene="res://main_menu/menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 __InkRuntime="*res://addons/inkgd/ink_runtime.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
 
 [editor_plugins]
 
@@ -54,3 +62,4 @@ jump={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

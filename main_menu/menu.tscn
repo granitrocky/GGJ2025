@@ -1,0 +1,455 @@
+[gd_scene load_steps=22 format=3 uid="uid://c14p4i7ss5o2y"]
+
+[ext_resource type="Texture2D" uid="uid://co4iy51og15hq" path="res://main_menu/assets/Fishy.png" id="1_4by7k"]
+[ext_resource type="Texture2D" uid="uid://cv4ohkajxlc0p" path="res://main_menu/assets/Toy2.png" id="1_fyd5n"]
+[ext_resource type="Texture2D" uid="uid://blaebh1kwahaw" path="res://main_menu/assets/white.png" id="1_w323f"]
+[ext_resource type="FontFile" uid="uid://dwbsopttqjj4c" path="res://fonts/Myfont-Regular.ttf" id="3_elct6"]
+[ext_resource type="Script" path="res://main_menu/button.gd" id="3_losi5"]
+[ext_resource type="Texture2D" uid="uid://bcrklh1d0qip3" path="res://main_menu/assets/Toy5.png" id="4_gqs5q"]
+[ext_resource type="AudioStream" uid="uid://d26rfnls5fubp" path="res://main_menu/assets/Squeaky Toy.mp3" id="5_20sex"]
+[ext_resource type="AudioStream" uid="uid://byoq6msxrmf70" path="res://main_menu/assets/Laser Pointer_.mp3" id="6_ny1vv"]
+[ext_resource type="Texture2D" uid="uid://cb6aevygorihr" path="res://main_menu/assets/Toy4.png" id="6_oi7ts"]
+[ext_resource type="Texture2D" uid="uid://cg4obdsdaq3li" path="res://main_menu/assets/Toy3.png" id="8_c8fw3"]
+[ext_resource type="Texture2D" uid="uid://dbumon6co1awx" path="res://main_menu/assets/Toy1.png" id="9_kx3vf"]
+[ext_resource type="Texture2D" uid="uid://nv5d68dpxd4y" path="res://main_menu/assets/Contoller.png" id="10_03t50"]
+[ext_resource type="AudioStream" uid="uid://d1p4w37xrp1xh" path="res://main_menu/assets/Boinggg.mp3" id="10_x7dhp"]
+[ext_resource type="AudioStream" uid="uid://rx824cyl51oy" path="res://main_menu/assets/Clink.mp3" id="12_6c5jm"]
+[ext_resource type="AudioStream" uid="uid://cv4m32w1xkqcc" path="res://main_menu/assets/Funny Noise.mp3" id="14_naagq"]
+[ext_resource type="AudioStream" uid="uid://cso81mdmqq81q" path="res://main_menu/assets/Horn.mp3" id="16_6t1vv"]
+[ext_resource type="AudioStream" uid="uid://x0oesmqqqec1" path="res://main_menu/assets/snap.mp3" id="17_b51ow"]
+
+[sub_resource type="Theme" id="Theme_amnvv"]
+
+[sub_resource type="Animation" id="Animation_ag5xk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.0872665]
+}
+
+[sub_resource type="Animation" id="Animation_snkbc"]
+resource_name = "new_animation"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.0872665, 0.0, 0.0872665]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i2akp"]
+_data = {
+"RESET": SubResource("Animation_ag5xk"),
+"new_animation": SubResource("Animation_snkbc")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -963.0
+offset_top = -562.0
+offset_right = 1004.0
+offset_bottom = 576.0
+texture = ExtResource("1_w323f")
+expand_mode = 1
+
+[node name="Title" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+rotation = -0.0523599
+
+[node name="Label" type="Label" parent="Title"]
+layout_mode = 0
+offset_left = -590.0
+offset_top = -132.0
+offset_right = 566.0
+offset_bottom = 285.0
+rotation = -0.11313
+theme_override_colors/font_color = Color(0.854902, 0.247059, 0.262745, 1)
+theme_override_fonts/font = ExtResource("3_elct6")
+theme_override_font_sizes/font_size = 222
+text = "Meowlogue
+Mittens"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Title"]
+layout_mode = 0
+offset_left = -276.0
+offset_top = 194.0
+offset_right = 352.0
+offset_bottom = 258.0
+rotation = -0.116889
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_elct6")
+theme_override_font_sizes/font_size = 72
+text = "A Global Gam Jam Entry!"
+
+[node name="Play" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 671.0
+offset_top = -357.0
+offset_right = 671.0
+offset_bottom = -357.0
+rotation = 0.893164
+scale = Vector2(0.990839, 0.981871)
+
+[node name="Button" type="TextureButton" parent="Play"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.444
+offset_top = -224.495
+offset_right = 263.556
+offset_bottom = 287.505
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.0872665
+pivot_offset = Vector2(128, 128)
+theme = SubResource("Theme_amnvv")
+texture_normal = ExtResource("1_4by7k")
+script = ExtResource("3_losi5")
+
+[node name="Label" type="Label" parent="Play/Button"]
+texture_filter = 2
+layout_mode = 0
+offset_left = 162.439
+offset_top = 269.66
+offset_right = 328.439
+offset_bottom = 365.661
+rotation = -0.368639
+theme_override_colors/font_color = Color(0.854902, 0.247059, 0.262745, 1)
+theme_override_fonts/font = ExtResource("3_elct6")
+theme_override_font_sizes/font_size = 120
+text = "Play"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Play/Button"]
+libraries = {
+"": SubResource("AnimationLibrary_i2akp")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Play/Button"]
+stream = ExtResource("5_20sex")
+bus = &"SFX"
+
+[node name="Fayad" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -2.0
+offset_top = 386.0
+offset_right = -2.0
+offset_bottom = 386.0
+rotation = 0.101373
+scale = Vector2(0.623213, 0.617573)
+
+[node name="Button" type="TextureButton" parent="Fayad"]
+layout_mode = 1
+offset_left = -289.295
+offset_top = -254.703
+offset_right = 222.705
+offset_bottom = 257.297
+rotation = -0.0872665
+pivot_offset = Vector2(128, 128)
+theme = SubResource("Theme_amnvv")
+texture_normal = ExtResource("4_gqs5q")
+script = ExtResource("3_losi5")
+
+[node name="Label" type="Label" parent="Fayad/Button"]
+texture_filter = 2
+layout_mode = 0
+offset_left = 164.252
+offset_top = 298.2
+offset_right = 316.252
+offset_bottom = 394.201
+rotation = 0.218816
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_elct6")
+theme_override_font_sizes/font_size = 72
+text = "Fayad"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Fayad/Button"]
+position = Vector2(277.638, 268.279)
+rotation = 0.0872665
+stream = ExtResource("6_ny1vv")
+bus = &"SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fayad/Button"]
+libraries = {
+"": SubResource("AnimationLibrary_i2akp")
+}
+
+[node name="Lydia" type="Control" parent="."]
+anchors_preset = 0
+offset_left = -34.0
+offset_top = -376.0
+offset_right = -31.0
+offset_bottom = -376.0
+rotation = 0.1865
+scale = Vector2(0.623213, 0.617573)
+
+[node name="Button" type="TextureButton" parent="Lydia"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.444
+offset_top = -224.495
+offset_right = 263.556
+offset_bottom = 287.505
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.0872665
+pivot_offset = Vector2(128, 128)
+theme = SubResource("Theme_amnvv")
+texture_normal = ExtResource("1_fyd5n")
+script = ExtResource("3_losi5")
+
+[node name="Label" type="Label" parent="Lydia/Button"]
+texture_filter = 2
+layout_mode = 0
+offset_left = 185.66
+offset_top = 333.386
+offset_right = 315.66
+offset_bottom = 429.386
+rotation = -0.4032
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_elct6")
+theme_override_font_sizes/font_size = 72
+text = "Lydia"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Lydia/Button"]
+libraries = {
+"": SubResource("AnimationLibrary_i2akp")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Lydia/Button"]
+stream = ExtResource("16_6t1vv")
+bus = &"SFX"
+
+[node name="Zach" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -628.0
+offset_top = 295.0
+offset_right = -628.0
+offset_bottom = 295.0
+rotation = 0.632184
+scale = Vector2(0.623213, 0.617573)
+
+[node name="Button" type="TextureButton" parent="Zach"]
+layout_mode = 1
+offset_left = -289.295
+offset_top = -254.703
+offset_right = 222.705
+offset_bottom = 257.297
+rotation = -0.0872665
+pivot_offset = Vector2(128, 128)
+theme = SubResource("Theme_amnvv")
+texture_normal = ExtResource("6_oi7ts")
+script = ExtResource("3_losi5")
+
+[node name="Label" type="Label" parent="Zach/Button"]
+texture_filter = 2
+layout_mode = 0
+offset_left = 301.242
+offset_top = 334.187
+offset_right = 453.242
+offset_bottom = 430.188
+rotation = -1.02506
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_elct6")
+theme_override_font_sizes/font_size = 72
+text = "Zach"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Zach/Button"]
+libraries = {
+"": SubResource("AnimationLibrary_i2akp")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Zach/Button"]
+stream = ExtResource("10_x7dhp")
+bus = &"SFX"
+
+[node name="Jonny" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -632.0
+offset_top = -265.0
+offset_right = -632.0
+offset_bottom = -265.0
+rotation = -1.49484
+scale = Vector2(0.623213, 0.617573)
+
+[node name="Button" type="TextureButton" parent="Jonny"]
+layout_mode = 1
+offset_left = -289.295
+offset_top = -254.703
+offset_right = 222.705
+offset_bottom = 257.297
+rotation = -0.0872665
+pivot_offset = Vector2(128, 128)
+theme = SubResource("Theme_amnvv")
+texture_normal = ExtResource("8_c8fw3")
+script = ExtResource("3_losi5")
+
+[node name="Label" type="Label" parent="Jonny/Button"]
+texture_filter = 2
+layout_mode = 0
+offset_left = 75.0931
+offset_top = 337.735
+offset_right = 227.093
+offset_bottom = 433.735
+rotation = 0.663411
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_elct6")
+theme_override_font_sizes/font_size = 72
+text = "Jonny"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Jonny/Button"]
+libraries = {
+"": SubResource("AnimationLibrary_i2akp")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Jonny/Button"]
+stream = ExtResource("12_6c5jm")
+bus = &"SFX"
+
+[node name="Edison" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 534.0
+offset_top = 399.0
+offset_right = 534.0
+offset_bottom = 399.0
+rotation = -0.541961
+scale = Vector2(0.623213, 0.617573)
+
+[node name="Button" type="TextureButton" parent="Edison"]
+layout_mode = 1
+offset_left = -289.295
+offset_top = -254.703
+offset_right = 222.705
+offset_bottom = 257.297
+rotation = -0.0872665
+pivot_offset = Vector2(128, 128)
+theme = SubResource("Theme_amnvv")
+texture_normal = ExtResource("9_kx3vf")
+flip_h = true
+script = ExtResource("3_losi5")
+
+[node name="Label" type="Label" parent="Edison/Button"]
+texture_filter = 2
+layout_mode = 0
+offset_left = 350.327
+offset_top = 293.676
+offset_right = 502.327
+offset_bottom = 389.676
+rotation = 1.14891
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_elct6")
+theme_override_font_sizes/font_size = 72
+text = "Edison?"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Edison/Button"]
+libraries = {
+"": SubResource("AnimationLibrary_i2akp")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Edison/Button"]
+stream = ExtResource("14_naagq")
+bus = &"SFX"
+
+[node name="Controls" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 743.0
+offset_top = -21.0
+offset_right = 743.0
+offset_bottom = -21.0
+rotation = -0.206142
+scale = Vector2(0.623213, 0.617573)
+
+[node name="Button" type="TextureButton" parent="Controls"]
+layout_mode = 1
+offset_left = -311.0
+offset_top = -192.0
+offset_right = 318.0
+offset_bottom = 352.0
+rotation = -0.0872665
+pivot_offset = Vector2(128, 128)
+theme = SubResource("Theme_amnvv")
+texture_normal = ExtResource("10_03t50")
+stretch_mode = 0
+flip_h = true
+script = ExtResource("3_losi5")
+
+[node name="Label" type="Label" parent="Controls/Button"]
+texture_filter = 2
+layout_mode = 0
+offset_left = 251.902
+offset_top = 184.492
+offset_right = 626.902
+offset_bottom = 278.492
+rotation = 0.412713
+theme_override_colors/font_color = Color(1, 0.8, 0, 1)
+theme_override_fonts/font = ExtResource("3_elct6")
+theme_override_font_sizes/font_size = 100
+text = "Controls"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Controls/Button"]
+libraries = {
+"": SubResource("AnimationLibrary_i2akp")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Controls/Button"]
+stream = ExtResource("17_b51ow")
+bus = &"SFX"
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+autoplay = true
+bus = &"Music"
+
+[connection signal="mouse_entered" from="Play/Button" to="Play/Button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Play/Button" to="Play/Button" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Fayad/Button" to="Fayad/Button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Fayad/Button" to="Fayad/Button" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Lydia/Button" to="Lydia/Button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Lydia/Button" to="Lydia/Button" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Zach/Button" to="Zach/Button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Zach/Button" to="Zach/Button" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Jonny/Button" to="Jonny/Button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Jonny/Button" to="Jonny/Button" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Edison/Button" to="Edison/Button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Edison/Button" to="Edison/Button" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Controls/Button" to="Controls/Button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Controls/Button" to="Controls/Button" method="_on_mouse_exited"]
