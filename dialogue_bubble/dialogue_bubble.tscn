@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=3 uid="uid://b3nrdqkj4qtdq"]
+
+[ext_resource type="Script" path="res://dialogue_bubble/scripts/dialogue_bubble.gd" id="1_7chuu"]
+[ext_resource type="Texture2D" uid="uid://c1jsue37x3aal" path="res://dialogue_bubble/assets/speechbubble_9slice.png" id="1_410vw"]
+[ext_resource type="FontFile" uid="uid://dwbsopttqjj4c" path="res://fonts/Myfont-Regular.ttf" id="2_nsoua"]
+[ext_resource type="Texture2D" uid="uid://b2tmnyyib6i81" path="res://dialogue_bubble/assets/speechbubble_Tail_pointLeft.png" id="3_kajx3"]
+[ext_resource type="Texture2D" uid="uid://crt16sbabr8k2" path="res://dialogue_bubble/assets/speechbubble_TailCenter.png" id="4_70pob"]
+[ext_resource type="Texture2D" uid="uid://bum7fty628omd" path="res://dialogue_bubble/assets/speechbubble_TailpointRight.png" id="5_tapsp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f24oj"]
+size = Vector2(522.664, 173.377)
+
+[node name="Dialogue_Bubble" type="Node2D"]
+script = ExtResource("1_7chuu")
+anchor_position = 1
+text = "This is a sample
+Dialogue Bubble"
+my_var = 0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-2, -12)
+scale = Vector2(0.0730843, 0.067436)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="StaticBody2D"]
+offset_left = -217.353
+offset_top = -72.4509
+offset_right = 203.647
+offset_bottom = 97.5491
+scale = Vector2(1.28434, 1.09455)
+texture = ExtResource("1_410vw")
+patch_margin_left = 85
+patch_margin_top = 85
+patch_margin_right = 85
+patch_margin_bottom = 85
+metadata/_edit_use_anchors_ = true
+
+[node name="tail_left" type="Sprite2D" parent="StaticBody2D/NinePatchRect"]
+position = Vector2(14, 197)
+texture = ExtResource("3_kajx3")
+
+[node name="tail_center" type="Sprite2D" parent="StaticBody2D/NinePatchRect"]
+visible = false
+position = Vector2(211, 197)
+texture = ExtResource("4_70pob")
+
+[node name="tail_right" type="Sprite2D" parent="StaticBody2D/NinePatchRect"]
+visible = false
+position = Vector2(398, 197)
+texture = ExtResource("5_tapsp")
+
+[node name="Label" type="Label" parent="StaticBody2D"]
+offset_left = -185.442
+offset_top = -35.9809
+offset_right = 175.558
+offset_bottom = 123.019
+scale = Vector2(1.37189, 1.06617)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_nsoua")
+theme_override_font_sizes/font_size = 64
+text = "This is a sample
+Dialogue Bubble"
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(52.0452, 21.9877)
+scale = Vector2(1.00221, 1)
+shape = SubResource("RectangleShape2D_f24oj")
+one_way_collision = true

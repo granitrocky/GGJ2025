@@ -198,7 +198,6 @@ text = "Fayad"
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Fayad/Button"]
 position = Vector2(277.638, 268.279)
 rotation = 0.0872665
-scale = Vector2(1, 1)
 stream = ExtResource("6_ny1vv")
 bus = &"SFX"
 
