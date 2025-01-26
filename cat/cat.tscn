@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://b8iwrtllwrxca"]
+[gd_scene load_steps=29 format=3 uid="uid://b8iwrtllwrxca"]
 
 [ext_resource type="Script" path="res://cat/scripts/cat.gd" id="1_8lgvu"]
 [ext_resource type="Texture2D" uid="uid://d0wj4arncii1m" path="res://cat/assets/CatSheet.png" id="2_0jmbi"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://c2c2m746yukds" path="res://cat/assets/Purr (Idle_).mp3" id="6_1l11v"]
 [ext_resource type="AudioStream" uid="uid://cjd7u408ex53h" path="res://cat/assets/Step.mp3" id="7_qqik8"]
 [ext_resource type="AudioStream" uid="uid://vofx2w2haduy" path="res://cat/assets/sfx try.mp3" id="8_xdhk1"]
+[ext_resource type="AudioStream" uid="uid://b5mjtmtc1v6jh" path="res://cat/assets/Jump.mp3" id="9_8gdld"]
 [ext_resource type="AudioStream" uid="uid://da0pjda6l37vx" path="res://cat/assets/Meow 3.mp3" id="9_vy71m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2f2tt"]
@@ -194,6 +195,10 @@ bus = &"SFX"
 
 [node name="TryToInteract" type="AudioStreamPlayer2D" parent="sfx"]
 stream = ExtResource("8_xdhk1")
+bus = &"SFX"
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="sfx"]
+stream = ExtResource("9_8gdld")
 bus = &"SFX"
 
 [node name="sfxMeow" type="AudioStreamPlayer2D" parent="sfx"]

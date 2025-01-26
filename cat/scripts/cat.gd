@@ -9,8 +9,13 @@ const JUMP_BUFFER_TIME = 0.15
 var coyote_timer = COYOTE_TIME
 var jump_buffer_timer = 0
 var is_mewoing = false
+var is_moving = false
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var idle: AudioStreamPlayer2D = $sfx/Idle
+@onready var walking: AudioStreamPlayer2D = $sfx/Walking
+@onready var jump: AudioStreamPlayer2D = $sfx/Jump
+@onready var try_to_interact: AudioStreamPlayer2D = $sfx/TryToInteract
 
 
 
@@ -29,8 +34,9 @@ func _physics_process(delta: float) -> void:
 		coyote_timer -= delta
 
 	if Input.is_action_just_pressed("jump"):
+		jump.play()
 		jump_buffer_timer = JUMP_BUFFER_TIME
-	
+
 	if coyote_timer > 0 and jump_buffer_timer > 0:
 		velocity.y = JUMP_VELOCITY
 		jump_buffer_timer = 0
@@ -53,8 +59,15 @@ func _physics_process(delta: float) -> void:
 		if is_on_floor():
 			if direction == 0:
 				animated_sprite.play("idle")
+				if is_moving == true:
+					idle.play()
+					is_moving=false
 			else:
 				animated_sprite.play("walk")
+				if is_moving == false:
+					idle.stop()
+					walking.play()
+					is_moving=true
 		elif velocity.y < 0:
 			animated_sprite.play("jump")
 	#else:
