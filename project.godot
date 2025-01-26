@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="Alice Danger's Meowlogue Mittens"
+run/main_scene="res://demo_scene/demo_scene.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+__InkRuntime="*res://addons/inkgd/ink_runtime.gd"
 
 [editor_plugins]
 

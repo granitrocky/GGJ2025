@@ -1,0 +1,14 @@
+[remap]
+
+importer="inkgd.ink"
+type="Resource"
+uid="uid://dfaxmio3aa5ky"
+path="res://.godot/imported/demo_scene.ink-bcbc9b5c9abb91b3e6d48ddf0dedc4da.res"
+
+[deps]
+
+source_file="res://demo_scene/demo_scene.ink"
+dest_files=["res://.godot/imported/demo_scene.ink-bcbc9b5c9abb91b3e6d48ddf0dedc4da.res"]
+
+[params]
+
