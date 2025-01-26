@@ -1,0 +1,15 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://bs2fcgkvuc31i"
+path="res://.godot/imported/json_farmersmarket.json-05d6a4aeaf790534aa6886a7ea80419d.res"
+
+[deps]
+
+source_file="res://json_farmersmarket.json"
+dest_files=["res://.godot/imported/json_farmersmarket.json-05d6a4aeaf790534aa6886a7ea80419d.res"]
+
+[params]
+
+compress=true

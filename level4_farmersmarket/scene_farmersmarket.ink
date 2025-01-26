@@ -1,6 +1,9 @@
 -> farmers_market
 == farmers_market
 #FLOW-corn_seller
+->farmers_market
+
+== corn_seller
     #TIME-5
     #NAME-CornSeller #BUB-Speech
     Corn!
@@ -11,8 +14,12 @@
     
     #CLEAR-CornSeller_Speech
     #TIME-4
+    
+    -> corn_seller
 
 #FLOW-argument
+
+== argument
     #TIME-2
     #NAME-CabbageFan #BUB-Speech
     Hey honey.
@@ -51,6 +58,7 @@
     ...
     
     #CLEAR-CabbageFan_Speech #CLEAR-CabbageHater_Speech
+    -> argument
 
  -> END
  

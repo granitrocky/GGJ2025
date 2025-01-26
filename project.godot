@@ -15,10 +15,6 @@ run/main_scene="res://cat/testing.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
-[autoload]
-
-__InkRuntime="*res://addons/inkgd/ink_runtime.gd"
-
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/gut/plugin.cfg", "res://addons/inkgd/plugin.cfg")
