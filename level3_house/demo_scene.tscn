@@ -1,0 +1,197 @@
+[gd_scene load_steps=13 format=3 uid="uid://c0v1ehhphpqw6"]
+
+[ext_resource type="Script" path="res://demo_scene/demo_scene_controller.gd" id="1_2o61p"]
+[ext_resource type="Script" path="res://addons/inkgd/ink_player.gd" id="2_fgx33"]
+[ext_resource type="Resource" uid="uid://bs80g40suvj2k" path="res://demo_scene/demo_scene.ink.json" id="3_dwblt"]
+[ext_resource type="Texture2D" uid="uid://b3y12pi85ejgd" path="res://icon.svg" id="4_dm6kd"]
+[ext_resource type="Script" path="res://interactable.gd" id="5_hqn3b"]
+[ext_resource type="Texture2D" uid="uid://bk16chrht3rdu" path="res://apple.png" id="6_m3luy"]
+[ext_resource type="Script" path="res://finish.gd" id="7_3dg5l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mg8bg"]
+font_size = 15
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_dvpuj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureButton:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(122, 87)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureButton:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_5b3y4"]
+resource_name = "apple_fall"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureButton:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.333333, 0.633333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(122, 87), Vector2(237, 234), Vector2(256.541, 373.572), Vector2(395, 547), Vector2(675, 838)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureButton:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.333333, 0.633333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.985133, 1.41113, 3.97176, 1.12233]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4w8lp"]
+_data = {
+"RESET": SubResource("Animation_dvpuj"),
+"apple_fall": SubResource("Animation_5b3y4")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_7dxme"]
+font_size = 166
+outline_size = 16
+outline_color = Color(0, 0, 0, 1)
+
+[node name="DemoScene" type="Node2D"]
+script = ExtResource("1_2o61p")
+
+[node name="InkPlayer" type="Node" parent="."]
+script = ExtResource("2_fgx33")
+ink_file = ExtResource("3_dwblt")
+
+[node name="Character1" type="Sprite2D" parent="."]
+position = Vector2(173, 563)
+texture = ExtResource("4_dm6kd")
+
+[node name="Speech" type="Node2D" parent="Character1"]
+
+[node name="Text" type="Label" parent="Character1/Speech"]
+offset_left = -89.0
+offset_top = -188.0
+offset_right = 85.0
+offset_bottom = -101.0
+label_settings = SubResource("LabelSettings_mg8bg")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+uppercase = true
+
+[node name="Character2" type="Sprite2D" parent="."]
+position = Vector2(446, 563)
+texture = ExtResource("4_dm6kd")
+
+[node name="Speech" type="Node2D" parent="Character2"]
+
+[node name="Text" type="Label" parent="Character2/Speech"]
+offset_left = -89.0
+offset_top = -188.0
+offset_right = 85.0
+offset_bottom = -101.0
+label_settings = SubResource("LabelSettings_mg8bg")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+uppercase = true
+
+[node name="Character3" type="Sprite2D" parent="."]
+position = Vector2(797, 199)
+texture = ExtResource("4_dm6kd")
+
+[node name="Speech" type="Node2D" parent="Character3"]
+
+[node name="Text" type="Label" parent="Character3/Speech"]
+offset_left = -89.0
+offset_top = -188.0
+offset_right = 85.0
+offset_bottom = -101.0
+label_settings = SubResource("LabelSettings_mg8bg")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+uppercase = true
+
+[node name="_IBApple" type="Node2D" parent="."]
+script = ExtResource("5_hqn3b")
+interactable_name = "Apple"
+
+[node name="Speech" type="Label" parent="_IBApple"]
+offset_left = 564.0
+offset_top = 120.0
+offset_right = 707.0
+offset_bottom = 180.0
+
+[node name="TextureButton" type="TextureButton" parent="_IBApple"]
+offset_left = 122.0
+offset_top = 87.0
+offset_right = 234.0
+offset_bottom = 199.0
+texture_normal = ExtResource("6_m3luy")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="_IBApple"]
+libraries = {
+"": SubResource("AnimationLibrary_4w8lp")
+}
+
+[node name="_IBFence" type="Node2D" parent="."]
+script = ExtResource("5_hqn3b")
+interactable_name = "Fence"
+
+[node name="Button" type="Button" parent="_IBFence"]
+offset_left = 620.0
+offset_top = 387.0
+offset_right = 1038.0
+offset_bottom = 615.0
+
+[node name="_IBBasket" type="Node2D" parent="."]
+script = ExtResource("5_hqn3b")
+interactable_name = "Basket"
+
+[node name="Button" type="Button" parent="_IBBasket"]
+offset_left = 935.0
+offset_top = 25.0
+offset_right = 1038.0
+offset_bottom = 123.0
+
+[node name="Finish" type="Label" parent="."]
+visible = false
+offset_left = 173.0
+offset_top = 420.0
+offset_right = 990.0
+offset_bottom = 647.0
+rotation = -0.523598
+text = "Complete!"
+label_settings = SubResource("LabelSettings_7dxme")
+script = ExtResource("7_3dg5l")
+
+[connection signal="level_complete" from="." to="Finish" method="complete"]
+[connection signal="pressed" from="_IBApple/TextureButton" to="_IBApple" method="_on_interact"]
+[connection signal="pressed" from="_IBFence/Button" to="_IBFence" method="_on_interact"]
+[connection signal="pressed" from="_IBBasket/Button" to="_IBBasket" method="_on_interact"]

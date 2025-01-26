@@ -67,7 +67,7 @@ signal ended()
 # ############################################################################ #
 
 ## The compiled Ink file (.json) to play.
-@export var ink_file: Resource
+@export var ink_file: InkResource
 
 ## When `true` the _story will be created in a separate threads, to
 ## prevent the UI from freezing if the _story is too big. Note that
@@ -255,7 +255,7 @@ func get_alive_flow_names() -> Array:
 		_push_null_story_error()
 		return []
 
-	return _story.alive_flow_names
+	return _story.state.alive_flow_names
 
 
 ## `true` if the current flow is the default flow.
@@ -265,7 +265,7 @@ func get_current_flow_is_default_flow() -> bool:
 		_push_null_story_error()
 		return false
 
-	return _story.current_flow_is_default_flow
+	return _story.state.current_flow_is_default_flow
 
 
 ## The current story path.
