@@ -1,12 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://c67sfwo6xhynk"]
+[gd_scene load_steps=13 format=3 uid="uid://b2ss1fr07c4g2"]
 
-[ext_resource type="Script" path="res://demo_scene/demo_scene_controller.gd" id="1_70c6a"]
-[ext_resource type="Script" path="res://addons/inkgd/ink_player.gd" id="2_sqd0i"]
-[ext_resource type="Resource" uid="uid://bs80g40suvj2k" path="res://demo_scene/demo_scene.ink.json" id="3_gdn5o"]
-[ext_resource type="Script" path="res://demo_scene/interactable.gd" id="4_rdu1v"]
-[ext_resource type="Texture2D" uid="uid://b3y12pi85ejgd" path="res://icon.svg" id="5_mactj"]
-[ext_resource type="Texture2D" uid="uid://bk16chrht3rdu" path="res://apple.png" id="6_03a80"]
-[ext_resource type="Script" path="res://demo_scene/finish.gd" id="7_vmpgk"]
+[ext_resource type="Script" path="res://demo_scene/demo_scene_controller.gd" id="1_dg7l0"]
+[ext_resource type="Script" path="res://addons/inkgd/ink_player.gd" id="2_vhd8r"]
+[ext_resource type="Resource" uid="uid://bs80g40suvj2k" path="res://demo_scene/demo_scene.ink.json" id="3_8rbs1"]
+[ext_resource type="Texture2D" uid="uid://b3y12pi85ejgd" path="res://icon.svg" id="4_qd6sl"]
+[ext_resource type="Script" path="res://demo_scene/interactable.gd" id="5_wvqhd"]
+[ext_resource type="Texture2D" uid="uid://bk16chrht3rdu" path="res://apple.png" id="6_bvpeo"]
+[ext_resource type="Script" path="res://demo_scene/finish.gd" id="7_5i76d"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mg8bg"]
 font_size = 15
@@ -79,15 +79,15 @@ outline_size = 16
 outline_color = Color(0, 0, 0, 1)
 
 [node name="DemoScene" type="Node2D"]
-script = ExtResource("1_70c6a")
+script = ExtResource("1_dg7l0")
 
 [node name="InkPlayer" type="Node" parent="."]
-script = ExtResource("2_sqd0i")
-ink_file = ExtResource("3_gdn5o")
+script = ExtResource("2_vhd8r")
+ink_file = ExtResource("3_8rbs1")
 
 [node name="Character1" type="Sprite2D" parent="."]
 position = Vector2(173, 563)
-texture = ExtResource("5_mactj")
+texture = ExtResource("4_qd6sl")
 
 [node name="Speech" type="Node2D" parent="Character1"]
 
@@ -104,7 +104,7 @@ uppercase = true
 
 [node name="Character2" type="Sprite2D" parent="."]
 position = Vector2(446, 563)
-texture = ExtResource("5_mactj")
+texture = ExtResource("4_qd6sl")
 
 [node name="Speech" type="Node2D" parent="Character2"]
 
@@ -121,7 +121,7 @@ uppercase = true
 
 [node name="Character3" type="Sprite2D" parent="."]
 position = Vector2(797, 199)
-texture = ExtResource("5_mactj")
+texture = ExtResource("4_qd6sl")
 
 [node name="Speech" type="Node2D" parent="Character3"]
 
@@ -137,7 +137,7 @@ autowrap_mode = 3
 uppercase = true
 
 [node name="_IBApple" type="Node2D" parent="."]
-script = ExtResource("4_rdu1v")
+script = ExtResource("5_wvqhd")
 interactable_name = "Apple"
 
 [node name="Speech" type="Label" parent="_IBApple"]
@@ -151,7 +151,7 @@ offset_left = 122.0
 offset_top = 87.0
 offset_right = 234.0
 offset_bottom = 199.0
-texture_normal = ExtResource("6_03a80")
+texture_normal = ExtResource("6_bvpeo")
 ignore_texture_size = true
 stretch_mode = 5
 
@@ -161,7 +161,7 @@ libraries = {
 }
 
 [node name="_IBFence" type="Node2D" parent="."]
-script = ExtResource("4_rdu1v")
+script = ExtResource("5_wvqhd")
 interactable_name = "Fence"
 
 [node name="Button" type="Button" parent="_IBFence"]
@@ -171,7 +171,7 @@ offset_right = 1038.0
 offset_bottom = 615.0
 
 [node name="_IBBasket" type="Node2D" parent="."]
-script = ExtResource("4_rdu1v")
+script = ExtResource("5_wvqhd")
 interactable_name = "Basket"
 
 [node name="Button" type="Button" parent="_IBBasket"]
@@ -189,7 +189,7 @@ offset_bottom = 647.0
 rotation = -0.523598
 text = "Complete!"
 label_settings = SubResource("LabelSettings_7dxme")
-script = ExtResource("7_vmpgk")
+script = ExtResource("7_5i76d")
 
 [connection signal="level_complete" from="." to="Finish" method="complete"]
 [connection signal="pressed" from="_IBApple/TextureButton" to="_IBApple" method="_on_interact"]

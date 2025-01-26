@@ -1,0 +1,14 @@
+[remap]
+
+importer="inkgd.ink"
+type="Resource"
+uid="uid://bajwm3x1vcg2p"
+path="res://.godot/imported/demo_scene.ink-16abc29109d29e75d08e5becfccb4e12.res"
+
+[deps]
+
+source_file="res://level3_house/demo_scene.ink"
+dest_files=["res://.godot/imported/demo_scene.ink-16abc29109d29e75d08e5becfccb4e12.res"]
+
+[params]
+
