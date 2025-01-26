@@ -4,9 +4,9 @@
 [ext_resource type="Script" path="res://addons/inkgd/ink_player.gd" id="2_rcnv0"]
 [ext_resource type="Resource" uid="uid://bs80g40suvj2k" path="res://demo_scene/demo_scene.ink.json" id="3_f78lh"]
 [ext_resource type="Texture2D" uid="uid://b3y12pi85ejgd" path="res://icon.svg" id="4_u2be8"]
-[ext_resource type="Script" path="res://demo_scene/interactable.gd" id="5_eggxk"]
+[ext_resource type="Script" path="res://interactable.gd" id="5_eggxk"]
 [ext_resource type="Texture2D" uid="uid://bk16chrht3rdu" path="res://apple.png" id="6_xeswh"]
-[ext_resource type="Script" path="res://demo_scene/finish.gd" id="7_dtcwk"]
+[ext_resource type="Script" path="res://finish.gd" id="7_dtcwk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mg8bg"]
 font_size = 15
