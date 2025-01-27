@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3 uid="uid://mqx0hm1pfrvb"]
+
+[ext_resource type="Script" path="res://dialogue_bubble/scripts/dialogue_bubble.gd" id="1_6q3r7"]
+[ext_resource type="Texture2D" uid="uid://c1jsue37x3aal" path="res://dialogue_bubble/assets/speechbubble_9slice.png" id="2_3d2yc"]
+[ext_resource type="Texture2D" uid="uid://b2tmnyyib6i81" path="res://dialogue_bubble/assets/speechbubble_Tail_pointLeft.png" id="3_xhcqk"]
+[ext_resource type="Texture2D" uid="uid://crt16sbabr8k2" path="res://dialogue_bubble/assets/speechbubble_TailCenter.png" id="4_352ru"]
+[ext_resource type="Texture2D" uid="uid://bum7fty628omd" path="res://dialogue_bubble/assets/speechbubble_TailpointRight.png" id="5_t3v7q"]
+[ext_resource type="FontFile" uid="uid://dwbsopttqjj4c" path="res://fonts/Myfont-Regular.ttf" id="6_1hhi3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f24oj"]
+size = Vector2(250.36, 934.219)
+
+[node name="Dialogue_Bubble" type="Node2D"]
+script = ExtResource("1_6q3r7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-2, -12)
+scale = Vector2(0.0730843, 0.067436)
+collision_mask = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="StaticBody2D"]
+offset_left = -217.353
+offset_top = -72.4509
+offset_right = 44.582
+offset_bottom = 878.754
+texture = ExtResource("2_3d2yc")
+patch_margin_left = 85
+patch_margin_top = 85
+patch_margin_right = 85
+patch_margin_bottom = 85
+metadata/_edit_use_anchors_ = true
+
+[node name="tail_left" type="Sprite2D" parent="StaticBody2D/NinePatchRect"]
+visible = false
+position = Vector2(14, 197)
+texture = ExtResource("3_xhcqk")
+
+[node name="tail_center" type="Sprite2D" parent="StaticBody2D/NinePatchRect"]
+position = Vector2(217.353, 977.012)
+texture = ExtResource("4_352ru")
+
+[node name="tail_right" type="Sprite2D" parent="StaticBody2D/NinePatchRect"]
+visible = false
+position = Vector2(398, 197)
+texture = ExtResource("5_t3v7q")
+
+[node name="Label" type="Label" parent="StaticBody2D"]
+offset_left = -185.442
+offset_top = -35.9809
+offset_right = 175.558
+offset_bottom = 123.019
+scale = Vector2(1.37189, 1.06617)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_1hhi3")
+theme_override_font_sizes/font_size = 64
+text = "WAAA
+waAA
+WaWA
+WAAA
+WAAA
+waAA
+WaWA
+WAAA
+WAAA
+waAA
+WaWA
+WAAA
+WAAA
+waAA
+WaWA
+WAAA"
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-84.4079, 407.794)
+scale = Vector2(1.00221, 1)
+shape = SubResource("RectangleShape2D_f24oj")
