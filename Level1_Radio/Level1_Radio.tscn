@@ -123,7 +123,7 @@ scale = Vector2(0.742188, 0.742188)
 texture = ExtResource("6_sud7f")
 
 [node name="ParkBench" type="Sprite2D" parent="Node2D"]
-position = Vector2(2710, 210)
+position = Vector2(2670, 240)
 scale = Vector2(0.72168, 0.72168)
 texture = ExtResource("7_fporv")
 
