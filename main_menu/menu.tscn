@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c14p4i7ss5o2y"]
+[gd_scene load_steps=26 format=3 uid="uid://c14p4i7ss5o2y"]
 
 [ext_resource type="Texture2D" uid="uid://co4iy51og15hq" path="res://main_menu/assets/Fishy.png" id="1_4by7k"]
 [ext_resource type="Texture2D" uid="uid://cv4ohkajxlc0p" path="res://main_menu/assets/Toy2.png" id="1_fyd5n"]
@@ -20,6 +20,7 @@
 [ext_resource type="AudioStream" uid="uid://x0oesmqqqec1" path="res://main_menu/assets/snap.mp3" id="17_b51ow"]
 [ext_resource type="Script" path="res://main_menu/control_menu.gd" id="19_k6mj1"]
 [ext_resource type="Texture2D" uid="uid://djpfu4ptykwgg" path="res://main_menu/assets/ControlPopup.png" id="20_myeqt"]
+[ext_resource type="AudioStream" uid="uid://cq4jba3xl2y86" path="res://main_menu/assets/GGJ Main Menu FINAL.mp3" id="21_si5ye"]
 
 [sub_resource type="Theme" id="Theme_amnvv"]
 
@@ -460,6 +461,7 @@ offset_right = 607.0
 offset_bottom = -206.0
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("21_si5ye")
 autoplay = true
 bus = &"Music"
 

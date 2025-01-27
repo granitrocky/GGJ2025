@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cq4jba3xl2y86"
+path="res://.godot/imported/GGJ Main Menu FINAL.mp3-7a188bcf0eb3db9046a8cff370dc8a25.mp3str"
+
+[deps]
+
+source_file="res://main_menu/assets/GGJ Main Menu FINAL.mp3"
+dest_files=["res://.godot/imported/GGJ Main Menu FINAL.mp3-7a188bcf0eb3db9046a8cff370dc8a25.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
