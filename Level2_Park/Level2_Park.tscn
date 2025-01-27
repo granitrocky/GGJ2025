@@ -1,13 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://brd7538iq1qs4"]
+[gd_scene load_steps=17 format=3 uid="uid://brd7538iq1qs4"]
 
 [ext_resource type="Texture2D" uid="uid://bdv2ju4lmujwi" path="res://Level2_Park/ParkPlanter.png" id="1_ab2u3"]
 [ext_resource type="Texture2D" uid="uid://c3lwoci4sllcs" path="res://Level1_Radio/BackgroundColor.png" id="1_qbey4"]
 [ext_resource type="Texture2D" uid="uid://ylhy11bm8j7w" path="res://Level1_Radio/ParkWall.png" id="2_bkgp8"]
 [ext_resource type="PackedScene" uid="uid://b8iwrtllwrxca" path="res://cat/cat.tscn" id="2_tq0k6"]
+[ext_resource type="Script" path="res://Level2_Park/node_2d_2.gd" id="2_v7k88"]
 [ext_resource type="Texture2D" uid="uid://d01jgiiqwkspk" path="res://Level1_Radio/streetlight.png" id="3_nfbjp"]
 [ext_resource type="Texture2D" uid="uid://dhylb3nus55vs" path="res://Level1_Radio/parkBench.png" id="4_xq72r"]
 [ext_resource type="Texture2D" uid="uid://d36db3gj4tg5w" path="res://Level2_Park/stroller.png" id="7_yv03b"]
-[ext_resource type="PackedScene" uid="uid://mqx0hm1pfrvb" path="res://dialogue_bubble/Babydialogue.tscn" id="8_b0vre"]
+[ext_resource type="PackedScene" path="res://dialogue_bubble/Babydialogue.tscn" id="8_b0vre"]
+[ext_resource type="AudioStream" uid="uid://7cpw6b7ln7pj" path="res://Level2_Park/GGJ Level Music FINAL.mp3" id="9_hamdj"]
+[ext_resource type="AudioStream" uid="uid://chg8bhhireb3d" path="res://Level2_Park/Baby Lydia is UPSET.mp3" id="10_gbycm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vcbj8"]
 size = Vector2(262, 48)
@@ -21,6 +24,9 @@ size = Vector2(20, 86)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t4hp7"]
 size = Vector2(26, 28.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_37jq4"]
+size = Vector2(53, 27)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="BackgroundColor" type="Sprite2D" parent="."]
@@ -28,8 +34,19 @@ position = Vector2(1877, 686)
 scale = Vector2(74.875, 44.375)
 texture = ExtResource("1_qbey4")
 
-[node name="Cat" parent="." instance=ExtResource("2_tq0k6")]
+[node name="Node2D2" type="Node2D" parent="."]
+script = ExtResource("2_v7k88")
+
+[node name="Cat" parent="Node2D2" instance=ExtResource("2_tq0k6")]
 position = Vector2(23, 63)
+
+[node name="Camera2D" type="Camera2D" parent="Node2D2/Cat"]
+position = Vector2(0, -1)
+offset = Vector2(0, -20)
+zoom = Vector2(10, 10)
+limit_bottom = 150
+limit_smoothed = true
+position_smoothing_enabled = true
 
 [node name="Node2D" type="Node2D" parent="."]
 scale = Vector2(0.1, 0.1)
@@ -109,8 +126,30 @@ position = Vector2(284, -2)
 position = Vector2(-10, 33)
 shape = SubResource("RectangleShape2D_rxgqw")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(23, 62)
+stream = ExtResource("9_hamdj")
+autoplay = true
+bus = &"Music"
+
 [node name="StaticBody2D5" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
 position = Vector2(147, 50.25)
 shape = SubResource("RectangleShape2D_t4hp7")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="StaticBody2D5"]
+stream = ExtResource("10_gbycm")
+volume_db = -9.905
+autoplay = true
+bus = &"SFX"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(142.5, 49.5)
+shape = SubResource("RectangleShape2D_37jq4")
+
+[connection signal="body_entered" from="Area2D" to="Node2D2" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Node2D2" method="_on_area_2d_body_exited"]

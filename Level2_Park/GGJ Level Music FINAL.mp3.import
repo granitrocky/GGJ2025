@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://7cpw6b7ln7pj"
+path="res://.godot/imported/GGJ Level Music FINAL.mp3-c371ac01b0e10b8a42f89630f3eedd01.mp3str"
+
+[deps]
+
+source_file="res://Level2_Park/GGJ Level Music FINAL.mp3"
+dest_files=["res://.godot/imported/GGJ Level Music FINAL.mp3-c371ac01b0e10b8a42f89630f3eedd01.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
