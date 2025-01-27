@@ -111,7 +111,7 @@ rotation = -0.116889
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_elct6")
 theme_override_font_sizes/font_size = 72
-text = "A Global Gam Jam Entry!"
+text = "A Global Game Jam Entry!"
 
 [node name="Play" type="Control" parent="."]
 layout_mode = 3
