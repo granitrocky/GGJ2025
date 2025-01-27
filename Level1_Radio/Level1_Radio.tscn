@@ -1,8 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://ccfubjj1vitud"]
+[gd_scene load_steps=25 format=3 uid="uid://ccfubjj1vitud"]
 
 [ext_resource type="PackedScene" uid="uid://b8iwrtllwrxca" path="res://cat/cat.tscn" id="1_ddqav"]
 [ext_resource type="Texture2D" uid="uid://b7f2l21c3warf" path="res://Level1_Radio/IceShantyHouse.png" id="1_pb2pd"]
 [ext_resource type="Texture2D" uid="uid://c3lwoci4sllcs" path="res://Level1_Radio/BackgroundColor.png" id="1_qccl5"]
+[ext_resource type="Script" path="res://Level1_Radio/radio_cat.gd" id="1_xjx3w"]
 [ext_resource type="Texture2D" uid="uid://bm3cee3yd2a5t" path="res://Level1_Radio/HouseChair.png" id="2_gpg0q"]
 [ext_resource type="Texture2D" uid="uid://cptpntg7mif0i" path="res://Level1_Radio/Radio.png" id="3_offp1"]
 [ext_resource type="Texture2D" uid="uid://ylhy11bm8j7w" path="res://Level1_Radio/ParkWall.png" id="4_d3u27"]
@@ -10,7 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://d01jgiiqwkspk" path="res://Level1_Radio/streetlight.png" id="6_sud7f"]
 [ext_resource type="Texture2D" uid="uid://dhylb3nus55vs" path="res://Level1_Radio/parkBench.png" id="7_fporv"]
 [ext_resource type="AudioStream" uid="uid://c3ef8y822jic0" path="res://Level1_Radio/GGJ Radio Song final.mp3" id="10_jq85o"]
-[ext_resource type="PackedScene" uid="uid://b70poqysi3p7d" path="res://dialogue_bubble/RadioDialogue.tscn" id="11_l8vdv"]
+[ext_resource type="PackedScene" path="res://dialogue_bubble/RadioDialogue.tscn" id="11_l8vdv"]
+[ext_resource type="Script" path="res://Level1_Radio/area_2d.gd" id="12_brwgs"]
 
 [sub_resource type="Animation" id="Animation_dljyl"]
 resource_name = "FlyAway"
@@ -49,6 +51,9 @@ _data = {
 "RESET": SubResource("Animation_synq2")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7gu1"]
+size = Vector2(881.897, 94.5224)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_da4l5"]
 size = Vector2(27.1156, 35.8782)
 
@@ -67,22 +72,29 @@ size = Vector2(1104, 505.896)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kyftt"]
 size = Vector2(145, 78.75)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bg4q1"]
+size = Vector2(24, 31)
+
 [node name="Node2D" type="Node2D"]
 
-[node name="Cat" parent="." instance=ExtResource("1_ddqav")]
+[node name="Node2D2" type="Node2D" parent="."]
+position = Vector2(-44, 0)
+script = ExtResource("1_xjx3w")
+
+[node name="Cat" parent="Node2D2" instance=ExtResource("1_ddqav")]
 position = Vector2(13, 56)
 
-[node name="Camera2D" type="Camera2D" parent="Cat"]
+[node name="Camera2D" type="Camera2D" parent="Node2D2/Cat"]
 position = Vector2(0, -1)
-offset = Vector2(0, -15)
-zoom = Vector2(8, 8)
+offset = Vector2(0, -20)
+zoom = Vector2(10, 10)
 limit_bottom = 150
 limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="BackgroundColor" type="Sprite2D" parent="."]
-position = Vector2(71.4999, 36)
-scale = Vector2(7.42188, 3.5625)
+position = Vector2(137, 62)
+scale = Vector2(12.2812, 7)
 texture = ExtResource("1_qccl5")
 
 [node name="Node2D" type="Node2D" parent="."]
@@ -102,10 +114,6 @@ texture = ExtResource("2_gpg0q")
 position = Vector2(576, 397)
 scale = Vector2(0.441406, 0.441406)
 texture = ExtResource("3_offp1")
-
-[node name="ParkWall" type="Sprite2D" parent="Node2D"]
-position = Vector2(407, 594)
-texture = ExtResource("4_d3u27")
 
 [node name="BirdTheif" type="Sprite2D" parent="Node2D"]
 position = Vector2(780, 214)
@@ -128,22 +136,22 @@ scale = Vector2(0.72168, 0.72168)
 texture = ExtResource("7_fporv")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Node2D"]
-position = Vector2(197, -188)
+position = Vector2(-73, -190)
 rotation = 3.14159
-scale = Vector2(1.01811, -1.0447)
+scale = Vector2(1.61016, -1.0648)
 
 [node name="ParkWall4" type="Sprite2D" parent="Node2D/StaticBody2D3"]
 position = Vector2(-204, 748)
 texture = ExtResource("4_d3u27")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D3"]
-position = Vector2(-199.39, 897.861)
-rotation = 3.13853
-scale = Vector2(32.485, -9.57871)
-shape = SubResource("RectangleShape2D_da4l5")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/StaticBody2D3"]
+position = Vector2(-200.599, 779.488)
+shape = SubResource("RectangleShape2D_y7gu1")
 one_way_collision = true
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Node2D"]
+position = Vector2(-60, 60)
+scale = Vector2(1.55988, 1.01613)
 
 [node name="ParkWall4" type="Sprite2D" parent="Node2D/StaticBody2D2"]
 position = Vector2(-204, 748)
@@ -176,7 +184,6 @@ shape = SubResource("RectangleShape2D_su55v")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/StaticBody2D4"]
 position = Vector2(379.151, 420.738)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_mu4n3")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
@@ -184,13 +191,12 @@ position = Vector2(1220, 220)
 scale = Vector2(1.52973, 0.998246)
 
 [node name="ParkWall4" type="Sprite2D" parent="Node2D/StaticBody2D"]
-position = Vector2(-93.2482, 748)
-scale = Vector2(1.21631, 1)
+position = Vector2(-114.401, 748)
+scale = Vector2(1.25762, 1)
 texture = ExtResource("4_d3u27")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
 position = Vector2(-101.709, 981.722)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_0qggu")
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="Node2D"]
@@ -207,5 +213,17 @@ stream = ExtResource("10_jq85o")
 bus = &"Music"
 
 [node name="Dialogue_Bubble" parent="." instance=ExtResource("11_l8vdv")]
+visible = false
 position = Vector2(73, 27)
 scale = Vector2(0.585124, 0.607875)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+script = ExtResource("12_brwgs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(52, 40.5)
+shape = SubResource("RectangleShape2D_bg4q1")
+
+[connection signal="body_entered" from="Area2D" to="Node2D2" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Node2D2" method="_on_area_2d_body_exited"]

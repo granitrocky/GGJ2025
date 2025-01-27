@@ -1,10 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://c14p4i7ss5o2y"]
+[gd_scene load_steps=25 format=3 uid="uid://c14p4i7ss5o2y"]
 
 [ext_resource type="Texture2D" uid="uid://co4iy51og15hq" path="res://main_menu/assets/Fishy.png" id="1_4by7k"]
 [ext_resource type="Texture2D" uid="uid://cv4ohkajxlc0p" path="res://main_menu/assets/Toy2.png" id="1_fyd5n"]
 [ext_resource type="Texture2D" uid="uid://blaebh1kwahaw" path="res://main_menu/assets/white.png" id="1_w323f"]
 [ext_resource type="FontFile" uid="uid://dwbsopttqjj4c" path="res://fonts/Myfont-Regular.ttf" id="3_elct6"]
 [ext_resource type="Script" path="res://main_menu/button.gd" id="3_losi5"]
+[ext_resource type="Script" path="res://main_menu/play.gd" id="3_xc2rv"]
 [ext_resource type="Texture2D" uid="uid://bcrklh1d0qip3" path="res://main_menu/assets/Toy5.png" id="4_gqs5q"]
 [ext_resource type="AudioStream" uid="uid://d26rfnls5fubp" path="res://main_menu/assets/Squeaky Toy.mp3" id="5_20sex"]
 [ext_resource type="AudioStream" uid="uid://byoq6msxrmf70" path="res://main_menu/assets/Laser Pointer_.mp3" id="6_ny1vv"]
@@ -17,6 +18,8 @@
 [ext_resource type="AudioStream" uid="uid://cv4m32w1xkqcc" path="res://main_menu/assets/Funny Noise.mp3" id="14_naagq"]
 [ext_resource type="AudioStream" uid="uid://cso81mdmqq81q" path="res://main_menu/assets/Horn.mp3" id="16_6t1vv"]
 [ext_resource type="AudioStream" uid="uid://x0oesmqqqec1" path="res://main_menu/assets/snap.mp3" id="17_b51ow"]
+[ext_resource type="Script" path="res://main_menu/control_menu.gd" id="19_k6mj1"]
+[ext_resource type="Texture2D" uid="uid://djpfu4ptykwgg" path="res://main_menu/assets/ControlPopup.png" id="20_myeqt"]
 
 [sub_resource type="Theme" id="Theme_amnvv"]
 
@@ -118,6 +121,7 @@ offset_right = 671.0
 offset_bottom = -357.0
 rotation = 0.893164
 scale = Vector2(0.990839, 0.981871)
+script = ExtResource("3_xc2rv")
 
 [node name="Button" type="TextureButton" parent="Play"]
 layout_mode = 1
@@ -435,12 +439,33 @@ libraries = {
 stream = ExtResource("17_b51ow")
 bus = &"SFX"
 
+[node name="Control Menu" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 85.0
+offset_right = 50.0
+offset_bottom = 125.0
+script = ExtResource("19_k6mj1")
+
+[node name="ControlPopup" type="Sprite2D" parent="Control Menu"]
+position = Vector2(46, 36)
+scale = Vector2(1.86848, 1.85157)
+texture = ExtResource("20_myeqt")
+
+[node name="TextureButton" type="TextureButton" parent="Control Menu"]
+layout_mode = 0
+offset_left = 483.0
+offset_top = -364.0
+offset_right = 607.0
+offset_bottom = -206.0
+
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 autoplay = true
 bus = &"Music"
 
 [connection signal="mouse_entered" from="Play/Button" to="Play/Button" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Play/Button" to="Play/Button" method="_on_mouse_exited"]
+[connection signal="pressed" from="Play/Button" to="Play" method="_on_button_pressed"]
 [connection signal="mouse_entered" from="Fayad/Button" to="Fayad/Button" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Fayad/Button" to="Fayad/Button" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Lydia/Button" to="Lydia/Button" method="_on_mouse_entered"]
@@ -453,3 +478,5 @@ bus = &"Music"
 [connection signal="mouse_exited" from="Edison/Button" to="Edison/Button" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Controls/Button" to="Controls/Button" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Controls/Button" to="Controls/Button" method="_on_mouse_exited"]
+[connection signal="pressed" from="Controls/Button" to="Control Menu" method="_on_button_pressed"]
+[connection signal="pressed" from="Control Menu/TextureButton" to="Control Menu" method="_on_texture_button_pressed"]

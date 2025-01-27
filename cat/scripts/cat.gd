@@ -78,3 +78,5 @@ func _physics_process(delta: float) -> void:
 
 func _on_meow_bubble_is_meowing(meowing: Variant) -> void:
 	is_mewoing = meowing
+
+# Replace with function body.
