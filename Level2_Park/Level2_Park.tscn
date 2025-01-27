@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://brd7538iq1qs4"]
+[gd_scene load_steps=18 format=3 uid="uid://brd7538iq1qs4"]
 
 [ext_resource type="Texture2D" uid="uid://bdv2ju4lmujwi" path="res://Level2_Park/ParkPlanter.png" id="1_ab2u3"]
 [ext_resource type="Texture2D" uid="uid://c3lwoci4sllcs" path="res://Level1_Radio/BackgroundColor.png" id="1_qbey4"]
@@ -26,6 +26,8 @@ size = Vector2(26, 28.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_37jq4"]
 size = Vector2(53, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kxn7s"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -151,5 +153,13 @@ collision_mask = 2
 position = Vector2(142.5, 49.5)
 shape = SubResource("RectangleShape2D_37jq4")
 
+[node name="Area2D2" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(253, 53)
+shape = SubResource("RectangleShape2D_kxn7s")
+
 [connection signal="body_entered" from="Area2D" to="Node2D2" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Node2D2" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Area2D2" to="Node2D2" method="_on_area_2d_2_body_entered"]

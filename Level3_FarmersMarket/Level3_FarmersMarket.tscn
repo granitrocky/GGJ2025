@@ -1,6 +1,7 @@
-[gd_scene load_steps=26 format=3 uid="uid://blbefx8x6kmhe"]
+[gd_scene load_steps=30 format=3 uid="uid://blbefx8x6kmhe"]
 
 [ext_resource type="Texture2D" uid="uid://c3lwoci4sllcs" path="res://Level1_Radio/BackgroundColor.png" id="1_e7yg7"]
+[ext_resource type="Script" path="res://Level3_FarmersMarket/node_2d.gd" id="1_gxjl4"]
 [ext_resource type="Texture2D" uid="uid://ylhy11bm8j7w" path="res://Level1_Radio/ParkWall.png" id="1_p4hul"]
 [ext_resource type="Texture2D" uid="uid://c518tf8maobd5" path="res://Level3_FarmersMarket/farmersmarket_Structure.png" id="2_560xh"]
 [ext_resource type="Texture2D" uid="uid://c0sm1bv5y4ilt" path="res://Level3_FarmersMarket/farmersmarket_Nest.png" id="3_4oq38"]
@@ -13,9 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://d01jgiiqwkspk" path="res://Level1_Radio/streetlight.png" id="9_8ikgd"]
 [ext_resource type="Texture2D" uid="uid://u0bdkd0jw5j7" path="res://Level3_FarmersMarket/farmersmarket_CornSign.png" id="10_g067r"]
 [ext_resource type="PackedScene" uid="uid://b8iwrtllwrxca" path="res://cat/cat.tscn" id="13_rejm6"]
-[ext_resource type="PackedScene" uid="uid://bmwfv46j8xblv" path="res://dialogue_bubble/AntiCabbageRhetoric.tscn" id="14_1pnme"]
-[ext_resource type="PackedScene" uid="uid://rovuhcy4invp" path="res://dialogue_bubble/uhohstinky.tscn" id="15_ngtes"]
-[ext_resource type="PackedScene" uid="uid://cq6j32tjcgl8y" path="res://dialogue_bubble/WhyNot.tscn" id="16_q8ttr"]
+[ext_resource type="PackedScene" path="res://dialogue_bubble/AntiCabbageRhetoric.tscn" id="14_1pnme"]
+[ext_resource type="PackedScene" path="res://dialogue_bubble/uhohstinky.tscn" id="15_ngtes"]
+[ext_resource type="PackedScene" path="res://dialogue_bubble/WhyNot.tscn" id="16_q8ttr"]
 [ext_resource type="AudioStream" uid="uid://cpq3eib0pj6j5" path="res://Level3_FarmersMarket/GGJ Level Music FINAL.mp3" id="17_jxatn"]
 [ext_resource type="Texture2D" uid="uid://bpwxrl08m0enb" path="res://Level3_FarmersMarket/farmersmarket_Barrel.png" id="18_2maka"]
 [ext_resource type="FontFile" uid="uid://dwbsopttqjj4c" path="res://fonts/Myfont-Regular.ttf" id="19_p3bbo"]
@@ -38,14 +39,27 @@ size = Vector2(106.641, 1.01529)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6u8hr"]
 size = Vector2(2.51572, 1.88679)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wkdwf"]
+size = Vector2(160, 170)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cikms"]
+size = Vector2(260, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jnpry"]
+size = Vector2(260, 60)
+
 [node name="Level3FarmersMarket" type="Node2D"]
 scale = Vector2(0.1, 0.1)
 
-[node name="Cat" parent="." instance=ExtResource("13_rejm6")]
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(1, 1)
+script = ExtResource("1_gxjl4")
+
+[node name="Cat" parent="Node2D" instance=ExtResource("13_rejm6")]
 position = Vector2(250, 600)
 scale = Vector2(10, 10)
 
-[node name="Camera2D" type="Camera2D" parent="Cat"]
+[node name="Camera2D" type="Camera2D" parent="Node2D/Cat"]
 position = Vector2(1, -60.1)
 scale = Vector2(0.1, 0.1)
 offset = Vector2(0, 20)
@@ -218,14 +232,17 @@ scale = Vector2(0.575862, 0.575862)
 texture = ExtResource("8_k0u3q")
 
 [node name="Dialogue_Bubble" parent="." instance=ExtResource("14_1pnme")]
+visible = false
 position = Vector2(1190, 160)
 scale = Vector2(6.24118, 4.19824)
 
 [node name="Dialogue_Bubble2" parent="." instance=ExtResource("16_q8ttr")]
+visible = false
 position = Vector2(1360, 220)
 scale = Vector2(3.67336, 4.4186)
 
 [node name="Dialogue_Bubble3" parent="." instance=ExtResource("15_ngtes")]
+visible = false
 position = Vector2(1110, 270)
 scale = Vector2(3.37037, 5.3032)
 
@@ -235,7 +252,6 @@ autoplay = true
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
 position = Vector2(180, 0)
-scale = Vector2(1, 1)
 
 [node name="FarmersmarketBarrel3" type="Sprite2D" parent="StaticBody2D4"]
 position = Vector2(660, 490)
@@ -259,6 +275,7 @@ texture = ExtResource("18_2maka")
 position = Vector2(660, 450)
 scale = Vector2(31.8, 10.6)
 shape = SubResource("RectangleShape2D_6u8hr")
+one_way_collision = true
 
 [node name="Label" type="Label" parent="."]
 offset_left = 2210.0
@@ -269,3 +286,33 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("19_p3bbo")
 theme_override_font_sizes/font_size = 276
 text = "The End"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(830, 380)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_wkdwf")
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(1100, 170)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(100, 4.76837e-07)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_cikms")
+
+[node name="Area2D3" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2(1310, 140)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_jnpry")
+
+[connection signal="body_entered" from="Area2D" to="Node2D" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Node2D" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Area2D2" to="Node2D" method="_on_area_2d_2_body_entered"]
+[connection signal="body_entered" from="Area2D3" to="Node2D" method="_on_area_2d_3_body_entered"]
