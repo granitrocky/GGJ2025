@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://ccfubjj1vitud"]
+[gd_scene load_steps=21 format=3 uid="uid://ccfubjj1vitud"]
 
+[ext_resource type="PackedScene" uid="uid://b8iwrtllwrxca" path="res://cat/cat.tscn" id="1_ddqav"]
 [ext_resource type="Texture2D" uid="uid://b7f2l21c3warf" path="res://Level1_Radio/IceShantyHouse.png" id="1_pb2pd"]
 [ext_resource type="Texture2D" uid="uid://c3lwoci4sllcs" path="res://Level1_Radio/BackgroundColor.png" id="1_qccl5"]
 [ext_resource type="Texture2D" uid="uid://bm3cee3yd2a5t" path="res://Level1_Radio/HouseChair.png" id="2_gpg0q"]
@@ -8,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://ckgnom1t8vu3t" path="res://Level1_Radio/BirdTheif.png" id="5_4gbmf"]
 [ext_resource type="Texture2D" uid="uid://d01jgiiqwkspk" path="res://Level1_Radio/streetlight.png" id="6_sud7f"]
 [ext_resource type="Texture2D" uid="uid://dhylb3nus55vs" path="res://Level1_Radio/parkBench.png" id="7_fporv"]
+[ext_resource type="AudioStream" uid="uid://c3ef8y822jic0" path="res://Level1_Radio/GGJ Radio Song final.mp3" id="10_jq85o"]
+[ext_resource type="PackedScene" uid="uid://b70poqysi3p7d" path="res://dialogue_bubble/RadioDialogue.tscn" id="11_l8vdv"]
 
 [sub_resource type="Animation" id="Animation_dljyl"]
 resource_name = "FlyAway"
@@ -46,52 +49,163 @@ _data = {
 "RESET": SubResource("Animation_synq2")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_da4l5"]
+size = Vector2(27.1156, 35.8782)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jxgs3"]
+size = Vector2(20, 114.171)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_su55v"]
+size = Vector2(38.6175, 41.5049)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mu4n3"]
+size = Vector2(382.614, 2484.35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0qggu"]
+size = Vector2(1104, 505.896)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kyftt"]
+size = Vector2(145, 78.75)
+
 [node name="Node2D" type="Node2D"]
 
+[node name="Cat" parent="." instance=ExtResource("1_ddqav")]
+position = Vector2(13, 56)
+
+[node name="Camera2D" type="Camera2D" parent="Cat"]
+position = Vector2(0, -1)
+offset = Vector2(0, -15)
+zoom = Vector2(8, 8)
+limit_bottom = 150
+limit_smoothed = true
+position_smoothing_enabled = true
+
 [node name="BackgroundColor" type="Sprite2D" parent="."]
-position = Vector2(2229, 527.5)
-scale = Vector2(98.0625, 61.0156)
+position = Vector2(71.4999, 36)
+scale = Vector2(7.42188, 3.5625)
 texture = ExtResource("1_qccl5")
 
-[node name="IceShantyHouse" type="Sprite2D" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(0.1, 0.1)
+
+[node name="IceShantyHouse" type="Sprite2D" parent="Node2D"]
 position = Vector2(331, 324)
 scale = Vector2(0.610352, 0.610352)
 texture = ExtResource("1_pb2pd")
 
-[node name="HouseChair" type="Sprite2D" parent="."]
-position = Vector2(595, 255)
+[node name="HouseChair" type="Sprite2D" parent="Node2D"]
+position = Vector2(495, 261)
 scale = Vector2(0.666016, 0.666016)
 texture = ExtResource("2_gpg0q")
 
-[node name="Radio" type="Sprite2D" parent="."]
-position = Vector2(676, 391)
+[node name="Radio" type="Sprite2D" parent="Node2D"]
+position = Vector2(576, 397)
 scale = Vector2(0.441406, 0.441406)
 texture = ExtResource("3_offp1")
 
-[node name="ParkWall" type="Sprite2D" parent="."]
+[node name="ParkWall" type="Sprite2D" parent="Node2D"]
 position = Vector2(407, 594)
 texture = ExtResource("4_d3u27")
 
-[node name="ParkWall2" type="Sprite2D" parent="."]
-position = Vector2(1981, 601)
-texture = ExtResource("4_d3u27")
-
-[node name="BirdTheif" type="Sprite2D" parent="."]
+[node name="BirdTheif" type="Sprite2D" parent="Node2D"]
 position = Vector2(780, 214)
 scale = Vector2(0.455078, 0.455078)
 texture = ExtResource("5_4gbmf")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="BirdTheif"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D/BirdTheif"]
 libraries = {
 "": SubResource("AnimationLibrary_xothn")
 }
 
-[node name="Streetlight" type="Sprite2D" parent="."]
-position = Vector2(1705, 232)
+[node name="Streetlight" type="Sprite2D" parent="Node2D"]
+position = Vector2(1950, 230)
 scale = Vector2(0.742188, 0.742188)
 texture = ExtResource("6_sud7f")
 
-[node name="ParkBench" type="Sprite2D" parent="."]
-position = Vector2(2221, 251)
+[node name="ParkBench" type="Sprite2D" parent="Node2D"]
+position = Vector2(2710, 210)
 scale = Vector2(0.72168, 0.72168)
 texture = ExtResource("7_fporv")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Node2D"]
+position = Vector2(197, -188)
+rotation = 3.14159
+scale = Vector2(1.01811, -1.0447)
+
+[node name="ParkWall4" type="Sprite2D" parent="Node2D/StaticBody2D3"]
+position = Vector2(-204, 748)
+texture = ExtResource("4_d3u27")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D3"]
+position = Vector2(-199.39, 897.861)
+rotation = 3.13853
+scale = Vector2(32.485, -9.57871)
+shape = SubResource("RectangleShape2D_da4l5")
+one_way_collision = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D"]
+
+[node name="ParkWall4" type="Sprite2D" parent="Node2D/StaticBody2D2"]
+position = Vector2(-204, 748)
+texture = ExtResource("4_d3u27")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D2"]
+position = Vector2(-200, 900)
+scale = Vector2(32.485, -9.57871)
+shape = SubResource("RectangleShape2D_da4l5")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/StaticBody2D2"]
+position = Vector2(-829.999, 365)
+rotation = -3.14159
+scale = Vector2(18.7606, -21.459)
+shape = SubResource("RectangleShape2D_jxgs3")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Node2D"]
+position = Vector2(2800, -150)
+scale = Vector2(1.52973, 0.998246)
+
+[node name="ParkWall4" type="Sprite2D" parent="Node2D/StaticBody2D4"]
+position = Vector2(-204, 748)
+texture = ExtResource("4_d3u27")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D4"]
+position = Vector2(-203.607, 981.413)
+rotation = 3.14159
+scale = Vector2(23.0714, -12.0828)
+shape = SubResource("RectangleShape2D_su55v")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/StaticBody2D4"]
+position = Vector2(379.151, 420.738)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_mu4n3")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
+position = Vector2(1220, 220)
+scale = Vector2(1.52973, 0.998246)
+
+[node name="ParkWall4" type="Sprite2D" parent="Node2D/StaticBody2D"]
+position = Vector2(-93.2482, 748)
+scale = Vector2(1.21631, 1)
+texture = ExtResource("4_d3u27")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+position = Vector2(-101.709, 981.722)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_0qggu")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Node2D"]
+position = Vector2(-100, 6.00017)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D5"]
+position = Vector2(670, 439.375)
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_kyftt")
+one_way_collision = true
+
+[node name="RadioMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_jq85o")
+bus = &"Music"
+
+[node name="Dialogue_Bubble" parent="." instance=ExtResource("11_l8vdv")]
+position = Vector2(73, 27)
+scale = Vector2(0.585124, 0.607875)
