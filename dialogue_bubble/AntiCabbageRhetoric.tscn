@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://bmwfv46j8xblv"]
+
+[ext_resource type="Script" path="res://dialogue_bubble/scripts/dialogue_bubble.gd" id="1_d3oy6"]
+[ext_resource type="Texture2D" uid="uid://c1jsue37x3aal" path="res://dialogue_bubble/assets/speechbubble_9slice.png" id="2_k50vi"]
+[ext_resource type="Texture2D" uid="uid://b2tmnyyib6i81" path="res://dialogue_bubble/assets/speechbubble_Tail_pointLeft.png" id="3_tfsny"]
+[ext_resource type="Texture2D" uid="uid://crt16sbabr8k2" path="res://dialogue_bubble/assets/speechbubble_TailCenter.png" id="4_taguo"]
+[ext_resource type="Texture2D" uid="uid://bum7fty628omd" path="res://dialogue_bubble/assets/speechbubble_TailpointRight.png" id="5_ww7ue"]
+[ext_resource type="FontFile" uid="uid://dwbsopttqjj4c" path="res://fonts/Myfont-Regular.ttf" id="6_dyp67"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f24oj"]
+size = Vector2(698.217, 2056.18)
+
+[node name="Dialogue_Bubble" type="Node2D"]
+script = ExtResource("1_d3oy6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-2, -12)
+scale = Vector2(0.0730843, 0.067436)
+collision_mask = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="StaticBody2D"]
+offset_left = -231.036
+offset_top = -87.2798
+offset_right = 189.964
+offset_bottom = 82.7202
+scale = Vector2(1.74518, 1.41529)
+texture = ExtResource("2_k50vi")
+patch_margin_left = 85
+patch_margin_top = 85
+patch_margin_right = 85
+patch_margin_bottom = 85
+metadata/_edit_use_anchors_ = true
+
+[node name="tail_left" type="Sprite2D" parent="StaticBody2D/NinePatchRect"]
+position = Vector2(14, 197)
+texture = ExtResource("3_tfsny")
+
+[node name="tail_center" type="Sprite2D" parent="StaticBody2D/NinePatchRect"]
+visible = false
+position = Vector2(211, 197)
+texture = ExtResource("4_taguo")
+
+[node name="tail_right" type="Sprite2D" parent="StaticBody2D/NinePatchRect"]
+visible = false
+position = Vector2(398, 197)
+texture = ExtResource("5_ww7ue")
+
+[node name="Label" type="Label" parent="StaticBody2D"]
+offset_left = -199.125
+offset_top = -50.8099
+offset_right = 559.875
+offset_bottom = 108.19
+scale = Vector2(0.885147, 1.75438)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_dyp67")
+theme_override_font_sizes/font_size = 64
+text = "Burton Corwallis, 
+we are not buying more cabbage!"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(136.828, 31.6703)
+scale = Vector2(1.03377, 0.113432)
+shape = SubResource("RectangleShape2D_f24oj")
+one_way_collision = true

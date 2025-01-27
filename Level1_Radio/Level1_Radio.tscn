@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://d01jgiiqwkspk" path="res://Level1_Radio/streetlight.png" id="6_sud7f"]
 [ext_resource type="Texture2D" uid="uid://dhylb3nus55vs" path="res://Level1_Radio/parkBench.png" id="7_fporv"]
 [ext_resource type="AudioStream" uid="uid://c3ef8y822jic0" path="res://Level1_Radio/GGJ Radio Song final.mp3" id="10_jq85o"]
-[ext_resource type="PackedScene" path="res://dialogue_bubble/RadioDialogue.tscn" id="11_l8vdv"]
+[ext_resource type="PackedScene" uid="uid://b70poqysi3p7d" path="res://dialogue_bubble/RadioDialogue.tscn" id="11_l8vdv"]
 [ext_resource type="Script" path="res://Level1_Radio/area_2d.gd" id="12_brwgs"]
 
 [sub_resource type="Animation" id="Animation_dljyl"]

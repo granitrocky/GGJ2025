@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://blbefx8x6kmhe"]
+[gd_scene load_steps=26 format=3 uid="uid://blbefx8x6kmhe"]
 
 [ext_resource type="Texture2D" uid="uid://c3lwoci4sllcs" path="res://Level1_Radio/BackgroundColor.png" id="1_e7yg7"]
 [ext_resource type="Texture2D" uid="uid://ylhy11bm8j7w" path="res://Level1_Radio/ParkWall.png" id="1_p4hul"]
@@ -6,22 +6,59 @@
 [ext_resource type="Texture2D" uid="uid://c0sm1bv5y4ilt" path="res://Level3_FarmersMarket/farmersmarket_Nest.png" id="3_4oq38"]
 [ext_resource type="Texture2D" uid="uid://c6pbg2n0qvra0" path="res://Level2_Park/Arguers.png" id="4_56a47"]
 [ext_resource type="Texture2D" uid="uid://fjefihtj2uif" path="res://Level3_FarmersMarket/farmersmarket_Awning.png" id="5_foqaf"]
+[ext_resource type="Texture2D" uid="uid://co4iy51og15hq" path="res://main_menu/assets/Fishy.png" id="6_6g1m5"]
 [ext_resource type="Texture2D" uid="uid://daskyljo5vqvf" path="res://Level3_FarmersMarket/farmersmarket_Table.png" id="6_6tm0e"]
 [ext_resource type="Texture2D" uid="uid://c04hbuofg1vs" path="res://Level3_FarmersMarket/farmersmarket_Cabbage.png" id="7_6a3sp"]
 [ext_resource type="Texture2D" uid="uid://bjqy280a7qexx" path="res://Level3_FarmersMarket/farmersmarket_Corn.png" id="8_k0u3q"]
 [ext_resource type="Texture2D" uid="uid://d01jgiiqwkspk" path="res://Level1_Radio/streetlight.png" id="9_8ikgd"]
 [ext_resource type="Texture2D" uid="uid://u0bdkd0jw5j7" path="res://Level3_FarmersMarket/farmersmarket_CornSign.png" id="10_g067r"]
+[ext_resource type="PackedScene" uid="uid://b8iwrtllwrxca" path="res://cat/cat.tscn" id="13_rejm6"]
+[ext_resource type="PackedScene" uid="uid://bmwfv46j8xblv" path="res://dialogue_bubble/AntiCabbageRhetoric.tscn" id="14_1pnme"]
+[ext_resource type="PackedScene" uid="uid://rovuhcy4invp" path="res://dialogue_bubble/uhohstinky.tscn" id="15_ngtes"]
+[ext_resource type="PackedScene" uid="uid://cq6j32tjcgl8y" path="res://dialogue_bubble/WhyNot.tscn" id="16_q8ttr"]
+[ext_resource type="AudioStream" uid="uid://cpq3eib0pj6j5" path="res://Level3_FarmersMarket/GGJ Level Music FINAL.mp3" id="17_jxatn"]
+[ext_resource type="Texture2D" uid="uid://bpwxrl08m0enb" path="res://Level3_FarmersMarket/farmersmarket_Barrel.png" id="18_2maka"]
+[ext_resource type="FontFile" uid="uid://dwbsopttqjj4c" path="res://fonts/Myfont-Regular.ttf" id="19_p3bbo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1upi1"]
+size = Vector2(9.34109, 7.56816)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tjo4c"]
+size = Vector2(75.5368, 29.452)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hsx74"]
+size = Vector2(73.4604, 117.523)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rudcx"]
+size = Vector2(108.295, 82.6217)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8bdi4"]
+size = Vector2(106.641, 1.01529)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6u8hr"]
+size = Vector2(2.51572, 1.88679)
 
 [node name="Level3FarmersMarket" type="Node2D"]
+scale = Vector2(0.1, 0.1)
+
+[node name="Cat" parent="." instance=ExtResource("13_rejm6")]
+position = Vector2(250, 600)
+scale = Vector2(10, 10)
+
+[node name="Camera2D" type="Camera2D" parent="Cat"]
+position = Vector2(1, -60.1)
+scale = Vector2(0.1, 0.1)
+offset = Vector2(0, 20)
+zoom = Vector2(11, 11)
+limit_top = -100
+limit_bottom = 150
+limit_smoothed = true
+position_smoothing_enabled = true
 
 [node name="BackgroundColor" type="Sprite2D" parent="."]
-position = Vector2(2129, 104)
+position = Vector2(1830, 130)
 scale = Vector2(93.875, 62.5)
 texture = ExtResource("1_e7yg7")
-
-[node name="ParkWall2" type="Sprite2D" parent="."]
-position = Vector2(446, 627)
-texture = ExtResource("1_p4hul")
 
 [node name="Streetlight" type="Sprite2D" parent="."]
 position = Vector2(170, 258)
@@ -38,34 +75,70 @@ position = Vector2(2323, 93)
 scale = Vector2(0.504292, 0.504292)
 texture = ExtResource("10_g067r")
 
-[node name="ParkWall3" type="Sprite2D" parent="."]
-position = Vector2(1314, 625)
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="ParkWall3" type="Sprite2D" parent="StaticBody2D3"]
+position = Vector2(845.5, 630)
+scale = Vector2(2.31543, 1)
 texture = ExtResource("1_p4hul")
 
-[node name="ParkWall4" type="Sprite2D" parent="."]
-position = Vector2(2189, 511)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(847.144, 859.512)
+scale = Vector2(221.143, -66.1954)
+shape = SubResource("RectangleShape2D_1upi1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(-270.504, 233.029)
+scale = Vector2(2.89913, 58.6057)
+shape = SubResource("RectangleShape2D_tjo4c")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="ParkWall4" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(2409, 510)
+scale = Vector2(1.34961, 1)
 texture = ExtResource("1_p4hul")
 
-[node name="FarmersmarketStructure" type="Sprite2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2420, 740)
+scale = Vector2(16.5789, 4.27817)
+shape = SubResource("RectangleShape2D_hsx74")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3120, 123.632)
+scale = Vector2(2.13642, 20.9057)
+shape = SubResource("RectangleShape2D_rudcx")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(2191, 59)
+
+[node name="FarmersmarketStructure" type="Sprite2D" parent="StaticBody2D2"]
+position = Vector2(0.000244141, 7.62939e-06)
 texture = ExtResource("2_560xh")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-5.99976, -149)
+scale = Vector2(10.9714, 19.6989)
+shape = SubResource("RectangleShape2D_8bdi4")
+one_way_collision = true
+
+[node name="Fishy" type="Sprite2D" parent="."]
+position = Vector2(2578.47, -133.345)
+rotation = 1.1463
+scale = Vector2(0.156501, 0.191082)
+texture = ExtResource("6_6g1m5")
+
 [node name="FarmersmarketNest" type="Sprite2D" parent="."]
-position = Vector2(2617, -90)
+position = Vector2(2568.47, -109.345)
 scale = Vector2(0.552632, 0.552632)
 texture = ExtResource("3_4oq38")
 
-[node name="Arguers" type="Sprite2D" parent="."]
-position = Vector2(1574, 353)
-scale = Vector2(0.550781, 0.550781)
-texture = ExtResource("4_56a47")
-
 [node name="FarmersmarketAwning" type="Sprite2D" parent="."]
-position = Vector2(951, 243)
+position = Vector2(980, 240)
 texture = ExtResource("5_foqaf")
 
 [node name="FarmersmarketTable" type="Sprite2D" parent="."]
-position = Vector2(2070, 435)
+position = Vector2(1340, 550)
 texture = ExtResource("6_6tm0e")
 
 [node name="FarmersmarketCabbage" type="Sprite2D" parent="FarmersmarketTable"]
@@ -97,6 +170,12 @@ texture = ExtResource("7_6a3sp")
 position = Vector2(-29.9999, -187)
 scale = Vector2(0.575862, 0.575862)
 texture = ExtResource("7_6a3sp")
+
+[node name="Arguers" type="Sprite2D" parent="."]
+position = Vector2(1130, 350)
+rotation = -0.00893846
+scale = Vector2(0.550781, 0.550781)
+texture = ExtResource("4_56a47")
 
 [node name="FarmersmarketTable2" type="Sprite2D" parent="."]
 position = Vector2(2499, 436)
@@ -137,3 +216,56 @@ position = Vector2(49.0001, -112)
 rotation = 2.4552
 scale = Vector2(0.575862, 0.575862)
 texture = ExtResource("8_k0u3q")
+
+[node name="Dialogue_Bubble" parent="." instance=ExtResource("14_1pnme")]
+position = Vector2(1190, 160)
+scale = Vector2(6.24118, 4.19824)
+
+[node name="Dialogue_Bubble2" parent="." instance=ExtResource("16_q8ttr")]
+position = Vector2(1360, 220)
+scale = Vector2(3.67336, 4.4186)
+
+[node name="Dialogue_Bubble3" parent="." instance=ExtResource("15_ngtes")]
+position = Vector2(1110, 270)
+scale = Vector2(3.37037, 5.3032)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_jxatn")
+autoplay = true
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(180, 0)
+scale = Vector2(1, 1)
+
+[node name="FarmersmarketBarrel3" type="Sprite2D" parent="StaticBody2D4"]
+position = Vector2(660, 490)
+rotation = -3.09806
+scale = Vector2(0.419677, 0.399621)
+texture = ExtResource("18_2maka")
+
+[node name="FarmersmarketBarrel" type="Sprite2D" parent="StaticBody2D4"]
+position = Vector2(630.375, 568)
+rotation = -3.10341
+scale = Vector2(0.38308, 0.363636)
+texture = ExtResource("18_2maka")
+
+[node name="FarmersmarketBarrel2" type="Sprite2D" parent="StaticBody2D4"]
+position = Vector2(690, 570)
+rotation = -3.10581
+scale = Vector2(0.440114, 0.363636)
+texture = ExtResource("18_2maka")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(660, 450)
+scale = Vector2(31.8, 10.6)
+shape = SubResource("RectangleShape2D_6u8hr")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 2210.0
+offset_top = -670.0
+offset_right = 3023.0
+offset_bottom = -454.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("19_p3bbo")
+theme_override_font_sizes/font_size = 276
+text = "The End"

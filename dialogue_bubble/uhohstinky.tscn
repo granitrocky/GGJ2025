@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://rovuhcy4invp"]
+
+[ext_resource type="Script" path="res://dialogue_bubble/scripts/dialogue_bubble.gd" id="1_vd7k6"]
+[ext_resource type="Texture2D" uid="uid://c1jsue37x3aal" path="res://dialogue_bubble/assets/speechbubble_9slice.png" id="2_k2i2m"]
+[ext_resource type="Texture2D" uid="uid://b2tmnyyib6i81" path="res://dialogue_bubble/assets/speechbubble_Tail_pointLeft.png" id="3_2yj8f"]
+[ext_resource type="Texture2D" uid="uid://crt16sbabr8k2" path="res://dialogue_bubble/assets/speechbubble_TailCenter.png" id="4_7mb2t"]
+[ext_resource type="Texture2D" uid="uid://bum7fty628omd" path="res://dialogue_bubble/assets/speechbubble_TailpointRight.png" id="5_ofd8e"]
+[ext_resource type="FontFile" uid="uid://dwbsopttqjj4c" path="res://fonts/Myfont-Regular.ttf" id="6_v61wo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f24oj"]
+size = Vector2(1055.87, 168.503)
+
+[node name="Dialogue_Bubble" type="Node2D"]
+script = ExtResource("1_vd7k6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-2, -12)
+scale = Vector2(0.0730843, 0.067436)
+collision_mask = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="StaticBody2D"]
+offset_left = -217.353
+offset_top = -72.4509
+offset_right = 203.647
+offset_bottom = 97.5491
+scale = Vector2(2.54293, 1.06906)
+texture = ExtResource("2_k2i2m")
+patch_margin_left = 85
+patch_margin_top = 85
+patch_margin_right = 85
+patch_margin_bottom = 85
+metadata/_edit_use_anchors_ = true
+
+[node name="tail_left" type="Sprite2D" parent="StaticBody2D/NinePatchRect"]
+position = Vector2(14, 197)
+texture = ExtResource("3_2yj8f")
+
+[node name="tail_center" type="Sprite2D" parent="StaticBody2D/NinePatchRect"]
+visible = false
+position = Vector2(211, 197)
+texture = ExtResource("4_7mb2t")
+
+[node name="tail_right" type="Sprite2D" parent="StaticBody2D/NinePatchRect"]
+visible = false
+position = Vector2(398, 197)
+texture = ExtResource("5_ofd8e")
+
+[node name="Label" type="Label" parent="StaticBody2D"]
+offset_left = -177.877
+offset_top = -44.4866
+offset_right = 538.123
+offset_bottom = 114.513
+scale = Vector2(1.38265, 1.29516)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_v61wo")
+theme_override_font_sizes/font_size = 64
+text = "Because our house stinks of it, 
+that's why!"
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(319.235, 19.5507)
+scale = Vector2(1.00221, 1)
+shape = SubResource("RectangleShape2D_f24oj")
+one_way_collision = true
